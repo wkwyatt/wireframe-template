@@ -1,0 +1,19 @@
+.first-container * {
+}
+.first-container {
+	margin: auto;
+	padding: 60px 0;
+	background-color: #C8CEDA;
+		.col {
+			.img-wrapper {
+				text-align: center;
+			}
+			p {
+				padding:10px;
+				font-family: $digitalFont;
+				height: 105px;
+				overflow: hidden;
+				background-color: white;
+			}
+		}
+}

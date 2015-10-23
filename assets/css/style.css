@@ -1,0 +1,112 @@
+/* line 4, ../compass/sass/header.scss */
+body {
+  background-color: #a9aaac;
+}
+
+/* line 8, ../compass/sass/header.scss */
+.container {
+  width: 900px;
+  background-color: white;
+  margin: 0 auto;
+}
+/* line 12, ../compass/sass/header.scss */
+.container .navbar {
+  position: relative;
+  height: 50px;
+  margin: auto;
+  padding: 15px;
+  width: 80%;
+  font-family: "Raleway", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+/* line 19, ../compass/sass/header.scss */
+.container .navbar #logo-image {
+  display: inline-block;
+}
+/* line 21, ../compass/sass/header.scss */
+.container .navbar #logo-image img {
+  width: 100px;
+}
+/* line 26, ../compass/sass/header.scss */
+.container .navbar-right {
+  display: inline-block;
+  float: right;
+  background-color: #a9aaac;
+}
+/* line 30, ../compass/sass/header.scss */
+.container .navbar-right ul {
+  list-style: none;
+  margin: 0;
+  padding: 15px;
+  font-size: 12px;
+  line-height: 1px;
+}
+/* line 36, ../compass/sass/header.scss */
+.container .navbar-right ul li {
+  float: left;
+}
+/* line 38, ../compass/sass/header.scss */
+.container .navbar-right ul li a {
+  text-decoration: none;
+  padding: 0 10px;
+  color: black;
+  border-left: 1px solid black;
+}
+/* line 46, ../compass/sass/header.scss */
+.container .navbar-right ul li:first-child a {
+  border: none;
+}
+/* line 52, ../compass/sass/header.scss */
+.container .hero-box {
+  padding: 75px 0;
+  text-align: center;
+}
+/* line 55, ../compass/sass/header.scss */
+.container .hero-box .hero-box-image {
+  margin: 0 auto;
+  text-align: center;
+  width: 450px;
+}
+/* line 59, ../compass/sass/header.scss */
+.container .hero-box .hero-box-image img {
+  width: 100%;
+}
+/* line 63, ../compass/sass/header.scss */
+.container .hero-box .sn-links {
+  position: relative;
+  margin-right: 15px;
+  right: 0;
+  top: -250px;
+  float: right;
+  display: block;
+}
+/* line 70, ../compass/sass/header.scss */
+.container .hero-box .sn-links .sn-box {
+  width: 50px;
+}
+/* line 73, ../compass/sass/header.scss */
+.container .hero-box .sn-links ul {
+  list-style: none;
+}
+/* line 76, ../compass/sass/header.scss */
+.container .hero-box .sn-links img {
+  width: 100%;
+}
+
+/* line 3, ../compass/sass/content.scss */
+.first-container {
+  margin: auto;
+  padding: 60px 0;
+  background-color: #C8CEDA;
+}
+/* line 8, ../compass/sass/content.scss */
+.first-container .col .img-wrapper {
+  text-align: center;
+}
+/* line 11, ../compass/sass/content.scss */
+.first-container .col p {
+  padding: 10px;
+  font-family: "Raleway", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  height: 105px;
+  overflow: hidden;
+  background-color: white;
+}
