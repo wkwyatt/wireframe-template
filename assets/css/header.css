@@ -1,16 +1,16 @@
 /*
-Error: Undefined variable: "$logoGray".
+Error: Undefined variable: "$navColor".
         on line 5 of /Users/wwyatt07/Desktop/digitalcrafts/wireframe-template/assets/compass/sass/header.scss
 
 1: * {
 2: 		// border:1px solid red;
 3: }
 4: body {
-5: 	background-color:$logoGray;
+5: 	background-color: $navColor;
 6: }
 7: 
 8: .container {
-9: 	width:900px;
+9: 	width: 1024px;
 10: 	background-color:white;
 
 Backtrace:
@@ -66,4 +66,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$logoGray\".\A         on line 5 of /Users/wwyatt07/Desktop/digitalcrafts/wireframe-template/assets/compass/sass/header.scss\A \A 1: * {\A 2: 		// border:1px solid red;\A 3: }\A 4: body {\A 5: 	background-color:$logoGray;\A 6: }\A 7: \A 8: .container {\A 9: 	width:900px;\A 10: 	background-color:white;"; }
+  content: "Error: Undefined variable: \"$navColor\".\A         on line 5 of /Users/wwyatt07/Desktop/digitalcrafts/wireframe-template/assets/compass/sass/header.scss\A \A 1: * {\A 2: 		// border:1px solid red;\A 3: }\A 4: body {\A 5: 	background-color: $navColor;\A 6: }\A 7: \A 8: .container {\A 9: 	width: 1024px;\A 10: 	background-color:white;"; }

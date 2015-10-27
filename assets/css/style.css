@@ -1,94 +1,144 @@
 /* line 4, ../compass/sass/header.scss */
 body {
-  background-color: #a9aaac;
+  background-color: #DC1F43;
 }
 
 /* line 8, ../compass/sass/header.scss */
 .container {
-  width: 900px;
+  width: 1024px;
   background-color: white;
   margin: 0 auto;
 }
-/* line 12, ../compass/sass/header.scss */
+/* line 13, ../compass/sass/header.scss */
+.container #header .navbar-default {
+  background: none;
+  border: none;
+}
+/* line 18, ../compass/sass/header.scss */
+.container #header .carousel .carousel-inner {
+  width: 100%;
+}
+/* line 20, ../compass/sass/header.scss */
+.container #header .carousel .carousel-inner .item {
+  max-height: 450px;
+}
+/* line 23, ../compass/sass/header.scss */
+.container #header .carousel .carousel-inner .carousel-caption {
+  background-color: rgba(0, 0, 0, 0.7);
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  padding-bottom: 25px;
+  width: 100%;
+  font-weight: bold;
+}
+/* line 31, ../compass/sass/header.scss */
+.container #header .carousel .carousel-inner .carousel-caption .headline-text {
+  display: inline-block;
+  margin-right: 50px;
+  font-size: 48px;
+}
+/* line 36, ../compass/sass/header.scss */
+.container #header .carousel .carousel-inner .carousel-caption .headline-button {
+  font-size: 24px;
+  display: inline-block;
+  background-color: #DC1F43;
+  border: 3px solid white;
+  border-radius: 25px 0px;
+  padding: 15px;
+}
+/* line 48, ../compass/sass/header.scss */
 .container .navbar {
   position: relative;
-  height: 50px;
+  height: auto;
   margin: auto;
+  margin-bottom: 0;
   padding: 15px;
   width: 80%;
   font-family: "Raleway", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-/* line 19, ../compass/sass/header.scss */
+/* line 56, ../compass/sass/header.scss */
 .container .navbar #logo-image {
   display: inline-block;
 }
-/* line 21, ../compass/sass/header.scss */
+/* line 58, ../compass/sass/header.scss */
 .container .navbar #logo-image img {
   width: 100px;
 }
-/* line 26, ../compass/sass/header.scss */
+/* line 62, ../compass/sass/header.scss */
+.container .navbar ul {
+  display: inline-block;
+  list-style: none;
+  margin: 20px 0;
+  padding: 25px;
+}
+/* line 67, ../compass/sass/header.scss */
+.container .navbar ul li {
+  display: inline-block;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1px;
+}
+/* line 73, ../compass/sass/header.scss */
+.container .navbar ul li a {
+  text-decoration: none;
+  padding: 0 10px;
+  color: #DC1F43;
+  border-left: 1px solid #DC1F43;
+}
+/* line 81, ../compass/sass/header.scss */
+.container .navbar ul li:first-child a {
+  border: none;
+}
+/* line 87, ../compass/sass/header.scss */
 .container .navbar-right {
   display: inline-block;
   float: right;
-  background-color: #a9aaac;
+  background-color: white;
 }
-/* line 30, ../compass/sass/header.scss */
+/* line 91, ../compass/sass/header.scss */
 .container .navbar-right ul {
+  display: inline-block;
   list-style: none;
-  margin: 0;
-  padding: 15px;
-  font-size: 12px;
-  line-height: 1px;
+  margin: 20px 0;
+  padding: 25px;
 }
-/* line 36, ../compass/sass/header.scss */
-.container .navbar-right ul li {
-  float: left;
-}
-/* line 38, ../compass/sass/header.scss */
+/* line 98, ../compass/sass/header.scss */
 .container .navbar-right ul li a {
   text-decoration: none;
   padding: 0 10px;
-  color: black;
-  border-left: 1px solid black;
+  color: #DC1F43;
+  border-left: 1px solid #DC1F43;
 }
-/* line 46, ../compass/sass/header.scss */
+/* line 106, ../compass/sass/header.scss */
 .container .navbar-right ul li:first-child a {
   border: none;
 }
-/* line 52, ../compass/sass/header.scss */
-.container .hero-box {
-  padding: 75px 0;
+/* line 112, ../compass/sass/header.scss */
+.container .sn-links {
+  position: relative;
+  margin: 10px auto;
+  display: inline-block;
   text-align: center;
-}
-/* line 55, ../compass/sass/header.scss */
-.container .hero-box .hero-box-image {
-  margin: 0 auto;
-  text-align: center;
-  width: 450px;
-}
-/* line 59, ../compass/sass/header.scss */
-.container .hero-box .hero-box-image img {
   width: 100%;
 }
-/* line 63, ../compass/sass/header.scss */
-.container .hero-box .sn-links {
-  position: relative;
-  margin-right: 15px;
-  right: 0;
-  top: -250px;
-  float: right;
-  display: block;
-}
-/* line 70, ../compass/sass/header.scss */
-.container .hero-box .sn-links .sn-box {
+/* line 118, ../compass/sass/header.scss */
+.container .sn-links .sn-box {
   width: 50px;
+  margin: 0 40px;
 }
-/* line 73, ../compass/sass/header.scss */
-.container .hero-box .sn-links ul {
+/* line 122, ../compass/sass/header.scss */
+.container .sn-links ul {
   list-style: none;
+  padding: 0;
 }
-/* line 76, ../compass/sass/header.scss */
-.container .hero-box .sn-links img {
+/* line 125, ../compass/sass/header.scss */
+.container .sn-links ul li {
+  display: inline-block;
+}
+/* line 129, ../compass/sass/header.scss */
+.container .sn-links img {
   width: 100%;
 }
 
