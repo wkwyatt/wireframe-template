@@ -1,69 +1,112 @@
-/*
-Error: Undefined variable: "$logoGray".
-        on line 5 of /Users/wwyatt07/Desktop/digitalcrafts/wireframe-template/assets/compass/sass/header.scss
+/* line 2, ../compass/sass/header.scss */
+header .container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+/* line 5, ../compass/sass/header.scss */
+header .container #logo-image {
+  width: 150px;
+  float: left;
+}
+/* line 8, ../compass/sass/header.scss */
+header .container #logo-image img {
+  max-width: 100%;
+  height: auto;
+}
+/* line 13, ../compass/sass/header.scss */
+header .container .navbar {
+  text-transform: uppercase;
+  background-color: white;
+  border: none;
+  margin: 0;
+  padding: 0;
+  height: auto;
+  position: inherit;
+}
+/* line 21, ../compass/sass/header.scss */
+header .container .navbar .navbar-header {
+  float: right;
+}
+/* line 24, ../compass/sass/header.scss */
+header .container .navbar #util {
+  float: right;
+  display: block;
+  margin-bottom: 25px;
+}
+/* line 28, ../compass/sass/header.scss */
+header .container .navbar #util #donate {
+  background-color: #fofofo;
+  padding: 20px;
+}
+/* line 33, ../compass/sass/header.scss */
+header .container .navbar #main-nav {
+  float: right;
+}
+/* line 35, ../compass/sass/header.scss */
+header .container .navbar #main-nav #nav {
+  list-style: none;
+  text-align: center;
+  margin: 0;
+  padding: 15px;
+  font-size: 18px;
+}
+/* line 41, ../compass/sass/header.scss */
+header .container .navbar #main-nav #nav ul {
+  position: absolute;
+  left: 0;
+  top: 90px;
+  background-color: black;
+  transition: all 200ms ease-in-out;
+}
+/* line 48, ../compass/sass/header.scss */
+header .container .navbar #main-nav #nav span {
+  display: block;
+}
+/* line 52, ../compass/sass/header.scss */
+header .container .navbar #main-nav #nav li a {
+  text-decoration: none;
+  padding: 10px 20px;
+  color: black;
+  border-left: 1px solid black;
+}
+/* line 60, ../compass/sass/header.scss */
+header .container .navbar #main-nav #nav li:first-child a {
+  border: none;
+}
 
-1: * {
-2: 		// border:1px solid red;
-3: }
-4: body {
-5: 	background-color:$logoGray;
-6: }
-7: 
-8: .container {
-9: 	width:900px;
-10: 	background-color:white;
-
-Backtrace:
-/Users/wwyatt07/Desktop/digitalcrafts/wireframe-template/assets/compass/sass/header.scss:5
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/script/tree/variable.rb:49:in `_perform'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/script/tree/node.rb:50:in `perform'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:395:in `visit_prop'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/stack.rb:79:in `block in with_base'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/stack.rb:115:in `with_frame'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/stack.rb:79:in `with_base'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:158:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:431:in `block (2 levels) in visit_rule'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:431:in `map'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:431:in `block in visit_rule'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:429:in `visit_rule'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/stack.rb:79:in `block in with_base'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/stack.rb:115:in `with_frame'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/stack.rb:79:in `with_base'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:158:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:52:in `map'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:157:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:8:in `visit'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/root_node.rb:36:in `css_tree'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/root_node.rb:20:in `render'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/engine.rb:278:in `render'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:209:in `each'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:470:in `on_file_changed'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/plugin/compiler.rb:328:in `block in watch'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/vendor/listen/lib/listen/listener.rb:252:in `call'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/vendor/listen/lib/listen/listener.rb:252:in `on_change'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/vendor/listen/lib/listen/adapter.rb:254:in `call'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/vendor/listen/lib/listen/adapter.rb:254:in `report_changes'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/vendor/listen/lib/listen/adapter.rb:323:in `poll_changed_directories'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Undefined variable: \"$logoGray\".\A         on line 5 of /Users/wwyatt07/Desktop/digitalcrafts/wireframe-template/assets/compass/sass/header.scss\A \A 1: * {\A 2: 		// border:1px solid red;\A 3: }\A 4: body {\A 5: 	background-color:$logoGray;\A 6: }\A 7: \A 8: .container {\A 9: 	width:900px;\A 10: 	background-color:white;"; }
+/* line 113, ../compass/sass/header.scss */
+.container .hero-box {
+  padding: 75px 0;
+  text-align: center;
+}
+/* line 116, ../compass/sass/header.scss */
+.container .hero-box .hero-box-image {
+  margin: 0 auto;
+  text-align: center;
+  width: 450px;
+}
+/* line 120, ../compass/sass/header.scss */
+.container .hero-box .hero-box-image img {
+  width: 100%;
+}
+/* line 124, ../compass/sass/header.scss */
+.container .hero-box .sn-links {
+  position: relative;
+  margin-right: 15px;
+  right: 0;
+  top: -250px;
+  float: right;
+  display: block;
+}
+/* line 131, ../compass/sass/header.scss */
+.container .hero-box .sn-links .sn-box {
+  width: 50px;
+}
+/* line 134, ../compass/sass/header.scss */
+.container .hero-box .sn-links ul {
+  list-style: none;
+}
+/* line 137, ../compass/sass/header.scss */
+.container .hero-box .sn-links img {
+  width: 100%;
+}
