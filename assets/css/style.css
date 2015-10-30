@@ -202,16 +202,23 @@ header .container .navbar #main-nav #nav li:first-child a {
   text-align: center;
   text-transform: uppercase;
 }
-/* line 182, ../compass/sass/header.scss */
+/* line 181, ../compass/sass/header.scss */
+.hero-box .carousel-inner {
+  min-height: 420px;
+}
+/* line 183, ../compass/sass/header.scss */
 .hero-box .carousel-inner img {
+  display: none;
   width: 100%;
 }
-/* line 185, ../compass/sass/header.scss */
+/* line 187, ../compass/sass/header.scss */
 .hero-box .carousel-inner .item {
-  max-height: 380px;
+  max-height: 430px;
+  position: absolute;
+  width: 100%;
 }
 
-/* line 191, ../compass/sass/header.scss */
+/* line 196, ../compass/sass/header.scss */
 .tag-line {
   margin: 20px 0;
   padding: 30px 0;
@@ -223,12 +230,144 @@ header .container .navbar #main-nav #nav li:first-child a {
   font-weight: bold;
 }
 
-/* line 202, ../compass/sass/header.scss */
+/* line 207, ../compass/sass/header.scss */
 .video-block {
+  font-size: 18px;
   margin-top: 15px;
   margin-bottom: 15px;
 }
-/* line 205, ../compass/sass/header.scss */
+/* line 211, ../compass/sass/header.scss */
 .video-block iframe {
   width: 100%;
+}
+
+/* line 216, ../compass/sass/header.scss */
+.categories {
+  position: relative;
+}
+/* line 218, ../compass/sass/header.scss */
+.categories .container {
+  padding: 25px;
+}
+/* line 220, ../compass/sass/header.scss */
+.categories .container .col {
+  margin-top: 25px;
+}
+
+/* line 229, ../compass/sass/header.scss */
+.categories::after {
+  content: "";
+  background: url("../images/background-images/categories.jpg") center center fixed;
+  opacity: 0.2;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+/* line 240, ../compass/sass/header.scss */
+footer {
+  background: #777;
+  color: white;
+  font-size: 18px;
+}
+/* line 244, ../compass/sass/header.scss */
+footer .container {
+  padding: 50px;
+  text-align: center;
+}
+/* line 247, ../compass/sass/header.scss */
+footer .container #logo-image {
+  width: 150px;
+  display: block;
+  margin: 0 auto 25px;
+}
+/* line 251, ../compass/sass/header.scss */
+footer .container #logo-image img {
+  max-width: 100%;
+  height: auto;
+}
+@media screen and (max-width: 765px) {
+  /* line 247, ../compass/sass/header.scss */
+  footer .container #logo-image {
+    float: none;
+    display: block;
+    margin: auto;
+  }
+}
+/* line 261, ../compass/sass/header.scss */
+footer .container .social-icons {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  width: 40%;
+}
+@media screen and (max-width: 765px) {
+  /* line 261, ../compass/sass/header.scss */
+  footer .container .social-icons {
+    display: inline;
+  }
+}
+/* line 269, ../compass/sass/header.scss */
+footer .container .social-icons ul {
+  margin: auto;
+  padding: 10px;
+}
+@media screen and (max-width: 765px) {
+  /* line 269, ../compass/sass/header.scss */
+  footer .container .social-icons ul {
+    padding: 0;
+  }
+}
+/* line 275, ../compass/sass/header.scss */
+footer .container .social-icons ul li {
+  list-style: none outside none;
+  display: inline-block;
+}
+/* line 281, ../compass/sass/header.scss */
+footer .container .social-icons i {
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  background-color: #909aa0;
+  font-size: 22px;
+  text-align: center;
+  padding-top: 10px;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -o-border-radius: 50%;
+  transition: all ease 0.3s;
+  -moz-transition: all ease 0.3s;
+  -webkit-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+  -ms-transition: all ease 0.3s;
+}
+/* line 299, ../compass/sass/header.scss */
+footer .container .social-icons i:hover {
+  color: #FFF;
+  text-decoration: none;
+  transition: all ease 0.3s;
+  -moz-transition: all ease 0.3s;
+  -webkit-transition: all ease 0.3s;
+  -o-transition: all ease 0.3s;
+  -ms-transition: all ease 0.3s;
+}
+/* line 308, ../compass/sass/header.scss */
+footer .container .social-icons .fa-facebook:hover {
+  background: #4060A5;
+}
+/* line 311, ../compass/sass/header.scss */
+footer .container .social-icons .fa-twitter:hover {
+  background: #00abe3;
+}
+/* line 314, ../compass/sass/header.scss */
+footer .container .social-icons .fa-instagram:hover {
+  background: #375989;
+}
+/* line 317, ../compass/sass/header.scss */
+footer .container .social-icons .fa-youtube:hover {
+  background: #ff1f25;
 }
