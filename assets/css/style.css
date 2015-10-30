@@ -62,7 +62,8 @@ header .container .navbar #util .social-icons {
   display: inline-block;
   margin: 0;
   padding: 0;
-  width: 70%;
+  width: 40%;
+  float: right;
 }
 @media screen and (max-width: 765px) {
   /* line 46, ../compass/sass/header.scss */
@@ -70,17 +71,17 @@ header .container .navbar #util .social-icons {
     display: none;
   }
 }
-/* line 54, ../compass/sass/header.scss */
+/* line 55, ../compass/sass/header.scss */
 header .container .navbar #util .social-icons ul {
   margin: 0;
   padding: 10px;
 }
-/* line 57, ../compass/sass/header.scss */
+/* line 58, ../compass/sass/header.scss */
 header .container .navbar #util .social-icons ul li {
   list-style: none outside none;
   display: inline-block;
 }
-/* line 63, ../compass/sass/header.scss */
+/* line 64, ../compass/sass/header.scss */
 header .container .navbar #util .social-icons i {
   width: 40px;
   height: 40px;
@@ -99,7 +100,7 @@ header .container .navbar #util .social-icons i {
   -o-transition: all ease 0.3s;
   -ms-transition: all ease 0.3s;
 }
-/* line 81, ../compass/sass/header.scss */
+/* line 82, ../compass/sass/header.scss */
 header .container .navbar #util .social-icons i:hover {
   color: #FFF;
   text-decoration: none;
@@ -109,44 +110,44 @@ header .container .navbar #util .social-icons i:hover {
   -o-transition: all ease 0.3s;
   -ms-transition: all ease 0.3s;
 }
-/* line 90, ../compass/sass/header.scss */
+/* line 91, ../compass/sass/header.scss */
 header .container .navbar #util .social-icons .fa-facebook:hover {
   background: #4060A5;
 }
-/* line 93, ../compass/sass/header.scss */
+/* line 94, ../compass/sass/header.scss */
 header .container .navbar #util .social-icons .fa-twitter:hover {
   background: #00abe3;
 }
-/* line 96, ../compass/sass/header.scss */
+/* line 97, ../compass/sass/header.scss */
 header .container .navbar #util .social-icons .fa-instagram:hover {
   background: #375989;
 }
-/* line 99, ../compass/sass/header.scss */
+/* line 100, ../compass/sass/header.scss */
 header .container .navbar #util .social-icons .fa-youtube:hover {
   background: #ff1f25;
 }
-/* line 103, ../compass/sass/header.scss */
+/* line 104, ../compass/sass/header.scss */
 header .container .navbar #util #donate {
   float: right;
   background-color: #f0f0f0;
   padding: 20px;
-  margin-right: 15px;
+  margin: 0 15px;
   transition: all ease 0.3s;
   -moz-transition: all ease 0.3s;
   -webkit-transition: all ease 0.3s;
   -o-transition: all ease 0.3s;
   -ms-transition: all ease 0.3s;
 }
-/* line 114, ../compass/sass/header.scss */
+/* line 115, ../compass/sass/header.scss */
 header .container .navbar #util #donate:hover {
   background-color: #139034;
   color: white;
 }
-/* line 119, ../compass/sass/header.scss */
+/* line 120, ../compass/sass/header.scss */
 header .container .navbar #main-nav {
   float: right;
 }
-/* line 122, ../compass/sass/header.scss */
+/* line 123, ../compass/sass/header.scss */
 header .container .navbar #main-nav #nav {
   list-style: none;
   text-align: center;
@@ -154,7 +155,7 @@ header .container .navbar #main-nav #nav {
   padding: 15px;
   font-size: 18px;
 }
-/* line 128, ../compass/sass/header.scss */
+/* line 129, ../compass/sass/header.scss */
 header .container .navbar #main-nav #nav ul {
   position: absolute;
   color: white;
@@ -167,50 +168,50 @@ header .container .navbar #main-nav #nav ul {
   z-index: 0;
   padding: 0;
 }
-/* line 139, ../compass/sass/header.scss */
+/* line 140, ../compass/sass/header.scss */
 header .container .navbar #main-nav #nav ul li {
   padding: 15px 25px;
   list-style: none;
   min-width: 160px;
 }
-/* line 145, ../compass/sass/header.scss */
+/* line 146, ../compass/sass/header.scss */
 header .container .navbar #main-nav #nav .show-menu {
   top: 100%;
   opacity: 1;
   visibility: visible;
   z-index: 9999;
 }
-/* line 151, ../compass/sass/header.scss */
+/* line 152, ../compass/sass/header.scss */
 header .container .navbar #main-nav #nav span {
   display: block;
 }
-/* line 156, ../compass/sass/header.scss */
+/* line 157, ../compass/sass/header.scss */
 header .container .navbar #main-nav #nav li a {
   text-decoration: none;
   padding: 15px 40px;
   color: black;
   border-left: 1px solid black;
 }
-/* line 164, ../compass/sass/header.scss */
+/* line 165, ../compass/sass/header.scss */
 header .container .navbar #main-nav #nav li:first-child a {
   border: none;
 }
 
-/* line 176, ../compass/sass/header.scss */
+/* line 177, ../compass/sass/header.scss */
 .hero-box h1 {
   text-align: center;
   text-transform: uppercase;
 }
-/* line 181, ../compass/sass/header.scss */
+/* line 182, ../compass/sass/header.scss */
 .hero-box .carousel-inner img {
   width: 100%;
 }
-/* line 184, ../compass/sass/header.scss */
+/* line 185, ../compass/sass/header.scss */
 .hero-box .carousel-inner .item {
-  max-height: 450px;
+  max-height: 380px;
 }
 
-/* line 190, ../compass/sass/header.scss */
+/* line 191, ../compass/sass/header.scss */
 .tag-line {
   margin: 20px 0;
   padding: 30px 0;
@@ -220,4 +221,14 @@ header .container .navbar #main-nav #nav li:first-child a {
   text-transform: uppercase;
   font-family: "Raleway", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;
+}
+
+/* line 202, ../compass/sass/header.scss */
+.video-block {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+/* line 205, ../compass/sass/header.scss */
+.video-block iframe {
+  width: 100%;
 }
