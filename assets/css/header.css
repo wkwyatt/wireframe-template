@@ -1,21 +1,21 @@
 /*
 Error: Undefined variable: "$mobileSize".
-        on line 12 of /Users/wwyatt07/Desktop/digitalcrafts/wireframe-template/assets/compass/sass/header.scss
+        on line 15 of /Users/wwyatt07/Desktop/digitalcrafts/wireframe-template/assets/compass/sass/header.scss
 
-7: 			float: left;
-8: 			img {
-9: 				max-width: 100%;
-10: 				height: auto;
-11: 			}
-12: 			@media screen and (max-width: $mobileSize) {
-13: 				float: none;
-14: 				display: block;
-15: 				margin: auto;
-16: 			}
-17: 		}
+10: 			float: left;
+11: 			img {
+12: 				max-width: 100%;
+13: 				height: auto;
+14: 			}
+15: 			@media screen and (max-width: $mobileSize) {
+16: 				float: none;
+17: 				display: block;
+18: 				margin: auto;
+19: 			}
+20: 		}
 
 Backtrace:
-/Users/wwyatt07/Desktop/digitalcrafts/wireframe-template/assets/compass/sass/header.scss:12
+/Users/wwyatt07/Desktop/digitalcrafts/wireframe-template/assets/compass/sass/header.scss:15
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/script/tree/node.rb:50:in `perform'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:537:in `block in run_interp_no_strip'
@@ -93,4 +93,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$mobileSize\".\A         on line 12 of /Users/wwyatt07/Desktop/digitalcrafts/wireframe-template/assets/compass/sass/header.scss\A \A 7: 			float: left;\A 8: 			img {\A 9: 				max-width: 100%;\A 10: 				height: auto;\A 11: 			}\A 12: 			@media screen and (max-width: $mobileSize) {\A 13: 				float: none;\A 14: 				display: block;\A 15: 				margin: auto;\A 16: 			}\A 17: 		}"; }
+  content: "Error: Undefined variable: \"$mobileSize\".\A         on line 15 of /Users/wwyatt07/Desktop/digitalcrafts/wireframe-template/assets/compass/sass/header.scss\A \A 10: 			float: left;\A 11: 			img {\A 12: 				max-width: 100%;\A 13: 				height: auto;\A 14: 			}\A 15: 			@media screen and (max-width: $mobileSize) {\A 16: 				float: none;\A 17: 				display: block;\A 18: 				margin: auto;\A 19: 			}\A 20: 		}"; }

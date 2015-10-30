@@ -1,7 +1,10 @@
+.container {
+	max-width: 960px;
+	margin: 0 auto;
+}
+
 header {
 	.container {
-		max-width: 960px;
-		margin: 0 auto;
 		#logo-image {
 			width: 150px;
 			float: left;
@@ -182,4 +185,15 @@ header {
 			max-height: 450px;
 		}
 	}
+}
+
+.tag-line {
+	margin: 20px 0;
+	padding: 30px 0;
+	background-color: $logoGreen;
+	text-align: center;
+	color: white;
+	text-transform: uppercase;
+	font-family: $digitalFont;
+	font-weight: bold;
 }
