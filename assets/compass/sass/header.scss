@@ -2,11 +2,23 @@
 		// border:1px solid red;
 }
 body {
-	background-color: $navColor;
+}
+
+#header {
+	text-align: center;
+	h1 {
+		font: 32px $fancyFont;
+		margin: 0;
+		// text-transform: uppercase
+	}
+	img {
+		width: 60px;
+
+	}
 }
 
 .container {
-	width: 1024px;
+	max-width: 1024px;
 	background-color:white;
 	margin: 0 auto;
 	#header {
