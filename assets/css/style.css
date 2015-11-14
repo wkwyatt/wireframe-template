@@ -29,16 +29,22 @@
   background: none;
   border: none;
 }
-/* line 34, ../compass/sass/header.scss */
-.header-wrapper .container #header .carousel .carousel-inner {
+/* line 35, ../compass/sass/header.scss */
+.fix-nav .header-wrapper {
+  position: fixed;
+  top: 10px;
+}
+
+/* line 41, ../compass/sass/header.scss */
+.carousel .carousel-inner {
   width: 100%;
 }
-/* line 36, ../compass/sass/header.scss */
-.header-wrapper .container #header .carousel .carousel-inner .item {
-  max-height: 450px;
+/* line 45, ../compass/sass/header.scss */
+.carousel .carousel-inner .item img {
+  width: 100%;
 }
-/* line 39, ../compass/sass/header.scss */
-.header-wrapper .container #header .carousel .carousel-inner .carousel-caption {
+/* line 49, ../compass/sass/header.scss */
+.carousel .carousel-inner .carousel-caption {
   background-color: rgba(0, 0, 0, 0.7);
   bottom: 0;
   left: 0;
@@ -47,14 +53,14 @@
   width: 100%;
   font-weight: bold;
 }
-/* line 47, ../compass/sass/header.scss */
-.header-wrapper .container #header .carousel .carousel-inner .carousel-caption .headline-text {
+/* line 57, ../compass/sass/header.scss */
+.carousel .carousel-inner .carousel-caption .headline-text {
   display: inline-block;
   margin-right: 50px;
   font-size: 48px;
 }
-/* line 52, ../compass/sass/header.scss */
-.header-wrapper .container #header .carousel .carousel-inner .carousel-caption .headline-button {
+/* line 62, ../compass/sass/header.scss */
+.carousel .carousel-inner .carousel-caption .headline-button {
   font-size: 24px;
   display: inline-block;
   background-color: #DC1F43;
@@ -62,8 +68,9 @@
   border-radius: 25px 0px;
   padding: 15px;
 }
-/* line 64, ../compass/sass/header.scss */
-.header-wrapper .container .navbar {
+
+/* line 74, ../compass/sass/header.scss */
+.navbar {
   position: relative;
   height: auto;
   margin: auto;
@@ -73,23 +80,23 @@
   border: none;
   text-align: center;
 }
-/* line 73, ../compass/sass/header.scss */
-.header-wrapper .container .navbar #logo-image {
+/* line 83, ../compass/sass/header.scss */
+.navbar #logo-image {
   display: inline-block;
 }
-/* line 75, ../compass/sass/header.scss */
-.header-wrapper .container .navbar #logo-image img {
+/* line 85, ../compass/sass/header.scss */
+.navbar #logo-image img {
   width: 100px;
 }
-/* line 79, ../compass/sass/header.scss */
-.header-wrapper .container .navbar ul {
+/* line 89, ../compass/sass/header.scss */
+.navbar ul {
   display: inline-block;
   list-style: none;
   margin: 0;
   padding: 15px;
 }
-/* line 84, ../compass/sass/header.scss */
-.header-wrapper .container .navbar ul li {
+/* line 94, ../compass/sass/header.scss */
+.navbar ul li {
   display: inline-block;
   float: left;
   font-size: 18px;
@@ -97,38 +104,39 @@
   font-weight: bold;
   line-height: 1px;
 }
-/* line 91, ../compass/sass/header.scss */
-.header-wrapper .container .navbar ul li a {
+/* line 101, ../compass/sass/header.scss */
+.navbar ul li a {
   text-decoration: none;
   padding: 0 10px;
   color: white;
   border-left: 1px solid #d3137a;
 }
-/* line 99, ../compass/sass/header.scss */
-.header-wrapper .container .navbar ul li:first-child a {
+/* line 109, ../compass/sass/header.scss */
+.navbar ul li:first-child a {
   border: none;
 }
-/* line 105, ../compass/sass/header.scss */
-.header-wrapper .container .navbar-right {
+
+/* line 115, ../compass/sass/header.scss */
+.navbar-right {
   background: none;
 }
-/* line 107, ../compass/sass/header.scss */
-.header-wrapper .container .navbar-right ul {
+/* line 117, ../compass/sass/header.scss */
+.navbar-right ul {
   display: inline-block;
   list-style: none;
   margin: 0;
   padding: 15px;
 }
-/* line 114, ../compass/sass/header.scss */
-.header-wrapper .container .navbar-right ul li a {
+/* line 124, ../compass/sass/header.scss */
+.navbar-right ul li a {
   text-decoration: none;
   font-size: 18px;
   padding: 0 10px;
   color: white;
   border-left: 1px solid #d3137a;
 }
-/* line 123, ../compass/sass/header.scss */
-.header-wrapper .container .navbar-right ul li:first-child a {
+/* line 133, ../compass/sass/header.scss */
+.navbar-right ul li:first-child a {
   border: none;
 }
 

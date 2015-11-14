@@ -186,6 +186,17 @@ $( document ).ready( function() {
   // });
 
 
+var wrap = $('body');
+
+wrap.on("scroll", function(event) {
+	/* Act on the event */
+	if(event.scrollTop > 99) {
+		$('.header-wrapper').addClass('fix-nav');
+	} else {
+		$('.header-wrapper').removeClass('fix-nav');
+	}
+});
+
 
 //////////////////////////////////////////////////////
     // init Isotope for Wigs
