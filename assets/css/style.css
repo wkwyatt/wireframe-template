@@ -17,40 +17,54 @@
   position: absolute;
   width: 100%;
   background: url("../images/background-images/purple-granular.png") repeat;
+  transition: background 2s;
 }
-/* line 25, ../compass/sass/header.scss */
+/* line 26, ../compass/sass/header.scss */
 #header-wrapper .container {
   max-width: 1024px;
   background-color: none;
   color: white;
   margin: 0 auto;
 }
-/* line 31, ../compass/sass/header.scss */
+/* line 32, ../compass/sass/header.scss */
 #header-wrapper .container #header .navbar-default {
   background: none;
   border: none;
 }
 
-/* line 38, ../compass/sass/header.scss */
+/* line 40, ../compass/sass/header.scss */
+#header-wrapper:before {
+  width: 100%;
+  position: absolute;
+  opacity: 0;
+  content: " ";
+  background: url("assets/images/background-images/black-granular.png") repeat;
+}
+
+/* line 48, ../compass/sass/header.scss */
 #header-wrapper.fix-nav {
   position: fixed;
   top: 0;
   z-index: 8888;
 }
+/* line 52, ../compass/sass/header.scss */
+#header-wrapper.fix-nav :before {
+  opacity: 1;
+}
 
-/* line 44, ../compass/sass/header.scss */
+/* line 57, ../compass/sass/header.scss */
 .carousel {
   margin-top: 55px;
 }
-/* line 46, ../compass/sass/header.scss */
+/* line 59, ../compass/sass/header.scss */
 .carousel .carousel-inner {
   width: 100%;
 }
-/* line 50, ../compass/sass/header.scss */
+/* line 63, ../compass/sass/header.scss */
 .carousel .carousel-inner .item img {
   width: 100%;
 }
-/* line 54, ../compass/sass/header.scss */
+/* line 67, ../compass/sass/header.scss */
 .carousel .carousel-inner .carousel-caption {
   background-color: rgba(0, 0, 0, 0.7);
   bottom: 0;
@@ -60,13 +74,13 @@
   width: 100%;
   font-weight: bold;
 }
-/* line 62, ../compass/sass/header.scss */
+/* line 75, ../compass/sass/header.scss */
 .carousel .carousel-inner .carousel-caption .headline-text {
   display: inline-block;
   margin-right: 50px;
   font-size: 48px;
 }
-/* line 67, ../compass/sass/header.scss */
+/* line 80, ../compass/sass/header.scss */
 .carousel .carousel-inner .carousel-caption .headline-button {
   font-size: 24px;
   display: inline-block;
@@ -76,7 +90,7 @@
   padding: 15px;
 }
 
-/* line 79, ../compass/sass/header.scss */
+/* line 92, ../compass/sass/header.scss */
 .navbar {
   position: relative;
   height: auto;
@@ -87,22 +101,22 @@
   border: none;
   text-align: center;
 }
-/* line 88, ../compass/sass/header.scss */
+/* line 101, ../compass/sass/header.scss */
 .navbar #logo-image {
   display: inline-block;
 }
-/* line 90, ../compass/sass/header.scss */
+/* line 103, ../compass/sass/header.scss */
 .navbar #logo-image img {
   width: 100px;
 }
-/* line 94, ../compass/sass/header.scss */
+/* line 107, ../compass/sass/header.scss */
 .navbar ul {
   display: inline-block;
   list-style: none;
   margin: 0;
   padding: 15px;
 }
-/* line 99, ../compass/sass/header.scss */
+/* line 112, ../compass/sass/header.scss */
 .navbar ul li {
   display: inline-block;
   float: left;
@@ -111,30 +125,30 @@
   font-weight: bold;
   line-height: 1px;
 }
-/* line 106, ../compass/sass/header.scss */
+/* line 119, ../compass/sass/header.scss */
 .navbar ul li a {
   text-decoration: none;
   padding: 0 10px;
   color: white;
   border-left: 1px solid #d3137a;
 }
-/* line 114, ../compass/sass/header.scss */
+/* line 127, ../compass/sass/header.scss */
 .navbar ul li:first-child a {
   border: none;
 }
 
-/* line 120, ../compass/sass/header.scss */
+/* line 133, ../compass/sass/header.scss */
 .navbar-right {
   background: none;
 }
-/* line 122, ../compass/sass/header.scss */
+/* line 135, ../compass/sass/header.scss */
 .navbar-right ul {
   display: inline-block;
   list-style: none;
   margin: 0;
   padding: 15px;
 }
-/* line 129, ../compass/sass/header.scss */
+/* line 142, ../compass/sass/header.scss */
 .navbar-right ul li a {
   text-decoration: none;
   font-size: 18px;
@@ -142,7 +156,7 @@
   color: white;
   border-left: 1px solid #d3137a;
 }
-/* line 138, ../compass/sass/header.scss */
+/* line 151, ../compass/sass/header.scss */
 .navbar-right ul li:first-child a {
   border: none;
 }
@@ -180,26 +194,24 @@ body {
 
 /* line 15, ../compass/sass/style.scss */
 .hair-style {
+  background: white;
   position: relative;
   float: left;
-  width: 100px;
-  height: 275px;
+  width: 245px;
+  height: auto;
   margin: 5px;
   padding: 10px;
-}
-/* line 22, ../compass/sass/style.scss */
-.hair-style img {
-  width: 100%;
-  height: 100px;
+  -webkit-box-shadow: -2px 10px 13px 2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -2px 10px 13px 2px rgba(0, 0, 0, 0.75);
+  box-shadow: -2px 10px 13px 2px rgba(0, 0, 0, 0.75);
 }
 /* line 26, ../compass/sass/style.scss */
-.hair-style * {
-  margin: 0;
-  padding: 0;
+.hair-style img {
+  width: 100%;
 }
 
 /* ---- button ---- */
-/* line 33, ../compass/sass/style.scss */
+/* line 36, ../compass/sass/style.scss */
 .button {
   display: inline-block;
   padding: 0.5em 1.0em;
@@ -214,39 +226,39 @@ body {
   cursor: pointer;
 }
 
-/* line 47, ../compass/sass/style.scss */
+/* line 50, ../compass/sass/style.scss */
 .button:hover {
   background-color: #8CF;
   text-shadow: 0 1px rgba(255, 255, 255, 0.5);
   color: #222;
 }
 
-/* line 53, ../compass/sass/style.scss */
+/* line 56, ../compass/sass/style.scss */
 .button:active,
 .button.is-checked {
   background-color: #28F;
 }
 
-/* line 58, ../compass/sass/style.scss */
+/* line 61, ../compass/sass/style.scss */
 .button.is-checked {
   color: white;
   text-shadow: 0 -1px rgba(0, 0, 0, 0.8);
 }
 
-/* line 63, ../compass/sass/style.scss */
+/* line 66, ../compass/sass/style.scss */
 .button:active {
   box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.8);
 }
 
 /* ---- button-group ---- */
-/* line 69, ../compass/sass/style.scss */
+/* line 72, ../compass/sass/style.scss */
 .button-group:after {
   content: '';
   display: block;
   clear: both;
 }
 
-/* line 75, ../compass/sass/style.scss */
+/* line 78, ../compass/sass/style.scss */
 .button-group .button {
   float: left;
   border-radius: 0;
@@ -254,24 +266,31 @@ body {
   margin-right: 1px;
 }
 
-/* line 82, ../compass/sass/style.scss */
+/* line 85, ../compass/sass/style.scss */
 .button-group .button:first-child {
   border-radius: 0.5em 0 0 0.5em;
 }
 
-/* line 83, ../compass/sass/style.scss */
+/* line 86, ../compass/sass/style.scss */
 .button-group .button:last-child {
   border-radius: 0 0.5em 0.5em 0;
 }
 
 /* ---- isotope ---- */
-/* line 87, ../compass/sass/style.scss */
+/* line 90, ../compass/sass/style.scss */
+#isotope-wrapper {
+  background: #dfdfdf;
+}
+
+/* line 94, ../compass/sass/style.scss */
 .isotope {
-  border: 1px solid #333;
+  width: 95%;
+  max-width: 1024px;
+  margin: auto;
 }
 
 /* clear fix */
-/* line 92, ../compass/sass/style.scss */
+/* line 102, ../compass/sass/style.scss */
 .isotope:after {
   content: '';
   display: block;
@@ -279,25 +298,23 @@ body {
 }
 
 /* ---- .element-item ---- */
-/* line 100, ../compass/sass/style.scss */
+/* line 110, ../compass/sass/style.scss */
 .element-item {
   position: relative;
   float: left;
-  width: 100px;
-  height: 100px;
   margin: 5px;
   padding: 10px;
   background: #888;
   color: #262524;
 }
 
-/* line 111, ../compass/sass/style.scss */
+/* line 121, ../compass/sass/style.scss */
 .element-item > * {
   margin: 0;
   padding: 0;
 }
 
-/* line 116, ../compass/sass/style.scss */
+/* line 126, ../compass/sass/style.scss */
 .element-item .name {
   position: absolute;
   left: 10px;
@@ -308,7 +325,7 @@ body {
   font-weight: normal;
 }
 
-/* line 127, ../compass/sass/style.scss */
+/* line 137, ../compass/sass/style.scss */
 .element-item .symbol {
   position: absolute;
   left: 10px;
@@ -318,14 +335,14 @@ body {
   color: white;
 }
 
-/* line 136, ../compass/sass/style.scss */
+/* line 146, ../compass/sass/style.scss */
 .element-item .number {
   position: absolute;
   right: 8px;
   top: 5px;
 }
 
-/* line 142, ../compass/sass/style.scss */
+/* line 152, ../compass/sass/style.scss */
 .element-item .weight {
   position: absolute;
   left: 10px;
@@ -333,61 +350,61 @@ body {
   font-size: 12px;
 }
 
-/* line 149, ../compass/sass/style.scss */
+/* line 159, ../compass/sass/style.scss */
 .element-item.alkali {
   background: #F00;
   background: red;
 }
 
-/* line 150, ../compass/sass/style.scss */
+/* line 160, ../compass/sass/style.scss */
 .element-item.alkaline-earth {
   background: #F80;
   background: #ff9900;
 }
 
-/* line 151, ../compass/sass/style.scss */
+/* line 161, ../compass/sass/style.scss */
 .element-item.lanthanoid {
   background: #FF0;
   background: #ccff00;
 }
 
-/* line 152, ../compass/sass/style.scss */
+/* line 162, ../compass/sass/style.scss */
 .element-item.actinoid {
   background: #0F0;
   background: #33ff00;
 }
 
-/* line 153, ../compass/sass/style.scss */
+/* line 163, ../compass/sass/style.scss */
 .element-item.transition {
   background: #0F8;
   background: #00ff66;
 }
 
-/* line 154, ../compass/sass/style.scss */
+/* line 164, ../compass/sass/style.scss */
 .element-item.post-transition {
   background: #0FF;
   background: cyan;
 }
 
-/* line 155, ../compass/sass/style.scss */
+/* line 165, ../compass/sass/style.scss */
 .element-item.metalloid {
   background: #08F;
   background: #0066ff;
 }
 
-/* line 156, ../compass/sass/style.scss */
+/* line 166, ../compass/sass/style.scss */
 .element-item.diatomic {
   background: #00F;
   background: #3300ff;
 }
 
-/* line 157, ../compass/sass/style.scss */
+/* line 167, ../compass/sass/style.scss */
 .element-item.halogen {
   background: #F0F;
   background: #cc00ff;
 }
 
-/* line 158, ../compass/sass/style.scss */
+/* line 168, ../compass/sass/style.scss */
 .element-item.noble-gas {
   background: #F08;
   background: #ff0099;
