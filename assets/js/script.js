@@ -237,19 +237,34 @@ if ($(this).scrollTop() > 100){
   };
 
   // bind filter button click
-  $('#filters').on( 'click', 'button', function() {
-    var filterValue = $( this ).attr('data-filter');
+  // $('#filters').on( 'click', 'button', function() {
+  //   var filterValue = $( this ).attr('data-filter');
+  //   // use filterFn if matches value
+  //   filterValue = filterFns[ filterValue ] || filterValue;
+  //   $container.isotope({ filter: filterValue });
+  // });
+
+   $('.filters-select').on( 'change', function() {
+    // get filter value from option value
+    var filterValue = this.value;
     // use filterFn if matches value
     filterValue = filterFns[ filterValue ] || filterValue;
     $container.isotope({ filter: filterValue });
   });
 
   // bind sort button click
-  $('#sorts').on( 'click', 'button', function() {
-    var sortByValue = $(this).attr('data-sort-by');
+  // $('#sorts').on('click', 'button', function() {
+  //   var sortByValue = $(this).attr('data-sort-by');
+  //   $container.isotope({ sortBy: sortByValue });
+  // });
+
+   $('.sort-select').on( 'change', function() {
+    // get filter value from option value
+    var sortByValue = this.value;
+    // use filterFn if matches value
     $container.isotope({ sortBy: sortByValue });
   });
-  
+
   // change is-checked class on buttons
   $('.button-group').each( function( i, buttonGroup ) {
     var $buttonGroup = $( buttonGroup );
