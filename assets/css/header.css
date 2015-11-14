@@ -1,21 +1,21 @@
 /*
 Error: Undefined variable: "$fancyFont".
-        on line 10 of /Users/wwyatt07/Desktop/digitalcrafts/wireframe-template/assets/compass/sass/header.scss
+        on line 11 of /Users/wwyatt07/Desktop/digitalcrafts/wireframe-template/assets/compass/sass/header.scss
 
-5: }
 6: 
 7: #header {
 8: 	text-align: center;
-9: 	h1 {
-10: 		font: 32px $fancyFont;
-11: 		margin: 0;
-12: 		// text-transform: uppercase
-13: 	}
-14: 	img {
-15: 		width: 60px;
+9: 
+10: 	h1 {
+11: 		font: 32px $fancyFont;
+12: 		margin: 0;
+13: 		// text-transform: uppercase
+14: 	}
+15: 	img {
+16: 		width: 60px;
 
 Backtrace:
-/Users/wwyatt07/Desktop/digitalcrafts/wireframe-template/assets/compass/sass/header.scss:10
+/Users/wwyatt07/Desktop/digitalcrafts/wireframe-template/assets/compass/sass/header.scss:11
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/script/tree/node.rb:50:in `perform'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.19/lib/sass/script/tree/list_literal.rb:63:in `block in _perform'
@@ -82,4 +82,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$fancyFont\".\A         on line 10 of /Users/wwyatt07/Desktop/digitalcrafts/wireframe-template/assets/compass/sass/header.scss\A \A 5: }\A 6: \A 7: #header {\A 8: 	text-align: center;\A 9: 	h1 {\A 10: 		font: 32px $fancyFont;\A 11: 		margin: 0;\A 12: 		// text-transform: uppercase\A 13: 	}\A 14: 	img {\A 15: 		width: 60px;"; }
+  content: "Error: Undefined variable: \"$fancyFont\".\A         on line 11 of /Users/wwyatt07/Desktop/digitalcrafts/wireframe-template/assets/compass/sass/header.scss\A \A 6: \A 7: #header {\A 8: 	text-align: center;\A 9: \A 10: 	h1 {\A 11: 		font: 32px $fancyFont;\A 12: 		margin: 0;\A 13: 		// text-transform: uppercase\A 14: 	}\A 15: 	img {\A 16: 		width: 60px;"; }

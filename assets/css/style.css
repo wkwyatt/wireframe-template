@@ -2,48 +2,55 @@
 #header {
   text-align: center;
 }
-/* line 9, ../compass/sass/header.scss */
+/* line 10, ../compass/sass/header.scss */
 #header h1 {
   font: 32px "Miss Fajardose", cursive;
   margin: 0;
 }
-/* line 14, ../compass/sass/header.scss */
+/* line 15, ../compass/sass/header.scss */
 #header img {
   width: 60px;
 }
 
-/* line 20, ../compass/sass/header.scss */
-.header-wrapper {
+/* line 21, ../compass/sass/header.scss */
+#header-wrapper {
+  position: absolute;
   width: 100%;
   background: url("../images/background-images/purple-granular.png") repeat;
 }
-/* line 23, ../compass/sass/header.scss */
-.header-wrapper .container {
+/* line 25, ../compass/sass/header.scss */
+#header-wrapper .container {
   max-width: 1024px;
   background-color: none;
   color: white;
   margin: 0 auto;
 }
-/* line 29, ../compass/sass/header.scss */
-.header-wrapper .container #header .navbar-default {
+/* line 31, ../compass/sass/header.scss */
+#header-wrapper .container #header .navbar-default {
   background: none;
   border: none;
 }
-/* line 35, ../compass/sass/header.scss */
-.fix-nav .header-wrapper {
+
+/* line 38, ../compass/sass/header.scss */
+#header-wrapper.fix-nav {
   position: fixed;
-  top: 10px;
+  top: 0;
+  z-index: 8888;
 }
 
-/* line 41, ../compass/sass/header.scss */
+/* line 44, ../compass/sass/header.scss */
+.carousel {
+  margin-top: 55px;
+}
+/* line 46, ../compass/sass/header.scss */
 .carousel .carousel-inner {
   width: 100%;
 }
-/* line 45, ../compass/sass/header.scss */
+/* line 50, ../compass/sass/header.scss */
 .carousel .carousel-inner .item img {
   width: 100%;
 }
-/* line 49, ../compass/sass/header.scss */
+/* line 54, ../compass/sass/header.scss */
 .carousel .carousel-inner .carousel-caption {
   background-color: rgba(0, 0, 0, 0.7);
   bottom: 0;
@@ -53,13 +60,13 @@
   width: 100%;
   font-weight: bold;
 }
-/* line 57, ../compass/sass/header.scss */
+/* line 62, ../compass/sass/header.scss */
 .carousel .carousel-inner .carousel-caption .headline-text {
   display: inline-block;
   margin-right: 50px;
   font-size: 48px;
 }
-/* line 62, ../compass/sass/header.scss */
+/* line 67, ../compass/sass/header.scss */
 .carousel .carousel-inner .carousel-caption .headline-button {
   font-size: 24px;
   display: inline-block;
@@ -69,7 +76,7 @@
   padding: 15px;
 }
 
-/* line 74, ../compass/sass/header.scss */
+/* line 79, ../compass/sass/header.scss */
 .navbar {
   position: relative;
   height: auto;
@@ -80,22 +87,22 @@
   border: none;
   text-align: center;
 }
-/* line 83, ../compass/sass/header.scss */
+/* line 88, ../compass/sass/header.scss */
 .navbar #logo-image {
   display: inline-block;
 }
-/* line 85, ../compass/sass/header.scss */
+/* line 90, ../compass/sass/header.scss */
 .navbar #logo-image img {
   width: 100px;
 }
-/* line 89, ../compass/sass/header.scss */
+/* line 94, ../compass/sass/header.scss */
 .navbar ul {
   display: inline-block;
   list-style: none;
   margin: 0;
   padding: 15px;
 }
-/* line 94, ../compass/sass/header.scss */
+/* line 99, ../compass/sass/header.scss */
 .navbar ul li {
   display: inline-block;
   float: left;
@@ -104,30 +111,30 @@
   font-weight: bold;
   line-height: 1px;
 }
-/* line 101, ../compass/sass/header.scss */
+/* line 106, ../compass/sass/header.scss */
 .navbar ul li a {
   text-decoration: none;
   padding: 0 10px;
   color: white;
   border-left: 1px solid #d3137a;
 }
-/* line 109, ../compass/sass/header.scss */
+/* line 114, ../compass/sass/header.scss */
 .navbar ul li:first-child a {
   border: none;
 }
 
-/* line 115, ../compass/sass/header.scss */
+/* line 120, ../compass/sass/header.scss */
 .navbar-right {
   background: none;
 }
-/* line 117, ../compass/sass/header.scss */
+/* line 122, ../compass/sass/header.scss */
 .navbar-right ul {
   display: inline-block;
   list-style: none;
   margin: 0;
   padding: 15px;
 }
-/* line 124, ../compass/sass/header.scss */
+/* line 129, ../compass/sass/header.scss */
 .navbar-right ul li a {
   text-decoration: none;
   font-size: 18px;
@@ -135,7 +142,7 @@
   color: white;
   border-left: 1px solid #d3137a;
 }
-/* line 133, ../compass/sass/header.scss */
+/* line 138, ../compass/sass/header.scss */
 .navbar-right ul li:first-child a {
   border: none;
 }

@@ -185,18 +185,24 @@ $( document ).ready( function() {
   //   });
   // });
 
-
-var wrap = $('body');
-
-wrap.on("scroll", function(event) {
-	/* Act on the event */
-	if(event.scrollTop > 99) {
-		$('.header-wrapper').addClass('fix-nav');
-	} else {
-		$('.header-wrapper').removeClass('fix-nav');
-	}
+$(window).scroll(function() {
+if ($(this).scrollTop() > 100){  
+    $('#header-wrapper').addClass("fix-nav");
+  }
+  else{
+    $('#header-wrapper').removeClass("fix-nav");
+  }
 });
 
+// if ($(this).scrollTop() > 100){  
+//     $('#header-wrapper').addClass("fix-nav");
+//     $('#header-wrapper').css('background-image','url("assets/images/background-images/black-granular.png")');
+//   }
+//   else{
+//     $('#header-wrapper').removeClass("fix-nav");
+//     $('#header-wrapper').css('background-image','url("assets/images/background-images/purple-granular.png")');
+//   }
+// });
 
 //////////////////////////////////////////////////////
     // init Isotope for Wigs

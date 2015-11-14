@@ -6,6 +6,7 @@ body {
 
 #header {
 	text-align: center;
+
 	h1 {
 		font: 32px $fancyFont;
 		margin: 0;
@@ -17,9 +18,11 @@ body {
 	}
 }
 
-.header-wrapper {
+#header-wrapper {
+	position: absolute;
 	width: 100%;
 	background: url('../images/background-images/purple-granular.png') repeat;
+	transition: background 2s;
 	.container {
 		max-width: 1024px;
 		background-color:none;
@@ -32,12 +35,27 @@ body {
 			}
 		}
 	}
-	.fix-nav & {
-		position: fixed;
-		top: 10px;
+}
+
+#header-wrapper:before {
+	width: 100%;
+	position: absolute;
+	opacity: 0;
+	content: " ";
+	background: url("assets/images/background-images/black-granular.png") repeat;
+}
+
+#header-wrapper.fix-nav {
+	position: fixed;
+	top: 0;
+	z-index: 8888;
+	:before {
+		opacity: 1;
 	}
 }
+
 .carousel {
+	margin-top: 55px;
 	.carousel-inner {
 		width: 100%;
 		.item {
