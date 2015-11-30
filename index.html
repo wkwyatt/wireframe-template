@@ -11,6 +11,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.2/isotope.pkgd.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="assets/js/script.js"></script>
 	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
 
@@ -287,56 +288,42 @@
 			  		<div class="hair-style {{wig.style}} {{wig.color}}" ng-repeat="wig in wigs" data-category="{{wig.style}}">
 			  			<img class="wig-image" src="{{wig.image}}">
 			  			<h3 class="name">{{wig.name}}</h3>
-						<p class="style">{{wig.style}}</p>
-						<p class="color">{{wig.color}}</p>
-						<p class="price">{{wig.price}}</p>
-					</div>
-				</div>
-			</div>
-			<!-- ------------------------------- -->
+			  			<p class="style">{{wig.style}}</p>
+			  			<p class="color">{{wig.color}}</p>
+			  			<p class="price">{{wig.price}}</p>
+			  		</div>
+			  	</div>
+			  </div>
+			  <!-- ------------------------------- -->
+			<div id="user-favs">
+			  	<div id="favorites-tab">
+			  		Favorites<span class="arrow"></span>
 
-		<!-- <div class="first-container container">
-			<div class="row">
-				<div class="col-md-4 col">
-					<div class="img-wrapper">
-						<img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcS_O9b7iomb87bNY1ll9yTm1T3LtkQThxOwzbYH-UZ-RPD5s4YZTg">
-					</div>
-					<h2>Health Care</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-					<button class="btn btn-default">Read more</button>
-				</div>
-				<div class="col-md-4 col">
-					<div class="img-wrapper">
-						<img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcS_O9b7iomb87bNY1ll9yTm1T3LtkQThxOwzbYH-UZ-RPD5s4YZTg">
-					</div>
-					<h2>Education</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-					<button class="btn btn-default">Read more</button>
-				</div>
-				<div class="col-md-4 col">
-					<div class="img-wrapper">
-						<img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcS_O9b7iomb87bNY1ll9yTm1T3LtkQThxOwzbYH-UZ-RPD5s4YZTg">
-					</div>
-					<h2>Programs</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-					<button class="btn btn-default">Read more</button>
+			  	</div>
+			  	<div id="sortable">
+				  	<div id="saved-favorites">
+				  		<div class="hair-style ui-state-default">
+				  			<img class="wig-image" src="http://wigskin.s3.amazonaws.com/media.2/catalog/product/cache/1/small_image/9df78eab33525d08d6e5fb8d27136e95/n/w/nw1101_01_sm.jpg">
+				  			<span>one</span><span>$2000</span>
+				  			<button>Add to cart</button>
+				  		</div>
+				  	</div>
+				  	<div id="saved-favorites">
+				  		<div class="hair-style ui-state-default">
+				  			<img class="wig-image" src="http://wigskin.s3.amazonaws.com/media.2/catalog/product/cache/1/small_image/9df78eab33525d08d6e5fb8d27136e95/n/w/nw1101_01_sm.jpg">
+				  			<span>two</span><span>$2000</span>
+				  			<button>Add to cart</button>
+				  		</div>
+				  	</div>
+				  	<div id="saved-favorites">
+				  		<div class="hair-style ui-state-default">
+				  			<img class="wig-image" src="http://wigskin.s3.amazonaws.com/media.2/catalog/product/cache/1/small_image/9df78eab33525d08d6e5fb8d27136e95/n/w/nw1101_01_sm.jpg">
+				  			<span>three</span><span>$2000</span>
+				  			<button>Add to cart</button>
+				  		</div>
+				  	</div>
 				</div>
 			</div>
-		</div> -->
-</body>
+
+			  </body>
 </html>

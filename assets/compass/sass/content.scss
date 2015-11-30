@@ -17,3 +17,40 @@
 			}
 		}
 }
+
+// favorites tab styling
+#sortable {
+	div {
+		float: left;
+	}
+}
+
+#user-favs {
+	position: fixed;
+	bottom:0;
+	right: 30px;
+	background-color: #ddd;
+	height: 0;
+	transition: height 1s;
+	.hair-style {
+		width: 155px;
+	}
+}
+
+#favorites-tab {
+	position: absolute;
+	text-align: center;
+	font-size: 24px;
+	width: 150px;
+	right: 10px;
+	top: -32px;
+	background-color: $logoPurple;
+	color: white;
+	border-radius: 15px 15px 0 0;
+}
+
+#saved-favorites {
+	float: right;
+	border:1px solid black;
+	padding: 10px;
+}

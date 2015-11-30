@@ -131,7 +131,7 @@ wireframeApp.controller('hairStyleController', function($scope){
 		}	
 	];
 });
-$( document ).ready( function() {
+$( window ).load( function() {
   // init Isotope
   // var $container = $('.isotope').isotope({
   //   itemSelector: '.element-item',
@@ -274,4 +274,16 @@ if ($(this).scrollTop() > 100){
     });
   });
   
+  // favorites setup
+  $('#favorites-tab').click(function(){
+  	if ($('#user-favs').height() <= 1) {
+  		$('#user-favs').height("auto");
+  	} else {
+  		$('#user-favs').height(0);
+  	}
+  	
+  });
+
+   $( "#sortable" ).sortable();
+   $( "#sortable" ).disableSelection()
 });
