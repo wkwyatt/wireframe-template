@@ -186,6 +186,17 @@
 }
 
 /* line 28, ../compass/sass/content.scss */
+.fav-btn {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  bottom: 10px;
+  right: 10px;
+  padding: 0;
+  border: none;
+}
+
+/* line 38, ../compass/sass/content.scss */
 #user-favs {
   position: fixed;
   bottom: 0;
@@ -194,12 +205,12 @@
   height: 0;
   transition: height 1s;
 }
-/* line 35, ../compass/sass/content.scss */
+/* line 45, ../compass/sass/content.scss */
 #user-favs .hair-style {
   width: 155px;
 }
 
-/* line 40, ../compass/sass/content.scss */
+/* line 50, ../compass/sass/content.scss */
 #favorites-tab {
   position: absolute;
   text-align: center;
@@ -212,8 +223,8 @@
   border-radius: 15px 15px 0 0;
 }
 
-/* line 52, ../compass/sass/content.scss */
-#saved-favorites {
+/* line 62, ../compass/sass/content.scss */
+.saved-favorites {
   float: right;
   border: 1px solid black;
   padding: 10px;

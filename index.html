@@ -291,37 +291,44 @@
 			  			<p class="style">{{wig.style}}</p>
 			  			<p class="color">{{wig.color}}</p>
 			  			<p class="price">{{wig.price}}</p>
+			  			<button ng-click="toggleFavorite(wig)" class="fav-btn"><img src="assets/images/icons/empty-fav-icon.png"></button>
 			  		</div>
 			  	</div>
 			  </div>
 			  <!-- ------------------------------- -->
-			<div id="user-favs">
+			<div id="user-favs" ng-controller="favoritesController">
 			  	<div id="favorites-tab">
 			  		Favorites<span class="arrow"></span>
 
 			  	</div>
-			  	<div id="sortable">
-				  	<div id="saved-favorites">
+			  	<div id="sortable" class="saved-favorites">
+			  		<div class="hair-style ui-state-default" ng-repeat="wig in favs">
+			  			<img class="wig-image" src="{{wig.image}}">
+			  			<h3 class="name">{{wig.name}}</h3>
+			  			<p class="price">{{wig.price}}</p>
+			  			<button>Add to cart</button>
+			  		</div>
+				  	<!-- <div class="saved-favorites">
 				  		<div class="hair-style ui-state-default">
 				  			<img class="wig-image" src="http://wigskin.s3.amazonaws.com/media.2/catalog/product/cache/1/small_image/9df78eab33525d08d6e5fb8d27136e95/n/w/nw1101_01_sm.jpg">
 				  			<span>one</span><span>$2000</span>
 				  			<button>Add to cart</button>
 				  		</div>
 				  	</div>
-				  	<div id="saved-favorites">
+				  	<div class="saved-favorites">
 				  		<div class="hair-style ui-state-default">
 				  			<img class="wig-image" src="http://wigskin.s3.amazonaws.com/media.2/catalog/product/cache/1/small_image/9df78eab33525d08d6e5fb8d27136e95/n/w/nw1101_01_sm.jpg">
 				  			<span>two</span><span>$2000</span>
 				  			<button>Add to cart</button>
 				  		</div>
 				  	</div>
-				  	<div id="saved-favorites">
+				  	<div class="saved-favorites">
 				  		<div class="hair-style ui-state-default">
 				  			<img class="wig-image" src="http://wigskin.s3.amazonaws.com/media.2/catalog/product/cache/1/small_image/9df78eab33525d08d6e5fb8d27136e95/n/w/nw1101_01_sm.jpg">
 				  			<span>three</span><span>$2000</span>
 				  			<button>Add to cart</button>
 				  		</div>
-				  	</div>
+				  	</div> -->
 				</div>
 			</div>
 

@@ -1,7 +1,11 @@
 // $('.carousel').carousel()
 // external js: isotope.pkgd.js
+var favorites = 0;
+
 var wireframeApp = angular.module('wireframeApp', []);
-wireframeApp.controller('hairStyleController', function($scope){
+wireframeApp.controller('favoritesController', favoritesController);
+wireframeApp.controller('hairStyleController', function($scope, $rootScope){
+	$rootScope.favs = [];
 	$scope.wigs = [
 		{
 			name: "Emotion",
@@ -130,8 +134,23 @@ wireframeApp.controller('hairStyleController', function($scope){
 			price: 1500
 		}	
 	];
+
+	$scope.toggleFavorite = function($wigObject){
+		$rootScope.favs.push($wigObject);
+		$( "#sortable" ).sortable();
+   		$( "#sortable" ).disableSelection();
+		console.log("just added : ");
+		console.log($rootScope.favs);
+	}
 });
+
+function favoritesController($scope, $rootScope) {
+	console.log("this is favs : " + $rootScope.favs);
+	// $scope.favs = $rootScope.favs;
+}
 $( window ).load( function() {
+
+
   // init Isotope
   // var $container = $('.isotope').isotope({
   //   itemSelector: '.element-item',
@@ -285,5 +304,5 @@ if ($(this).scrollTop() > 100){
   });
 
    $( "#sortable" ).sortable();
-   $( "#sortable" ).disableSelection()
+   $( "#sortable" ).disableSelection();
 });
