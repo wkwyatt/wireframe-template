@@ -3,9 +3,13 @@
 var favorites = 0;
 
 var wireframeApp = angular.module('wireframeApp', ['ngCookies']);
-wireframeApp.controller('hairStyleController',[ function($scope) {
-	console.log($scope);
-	$scope.favs = [];
+wireframeApp.controller('hairStyleController',[ '$scope', '$cookies', '$cookieStore', function($scope, $cookies, $cookieStore) {
+	console.log($cookies);
+	$scope.favs = $cookieStore.get('myFavs');
+	if ($scope.favs == undefined) {
+		$scope.favs = [];	
+	}
+
 	$scope.favImg = "assets/images/icons/fav-icon.png";
 	$scope.unfavImg = "assets/images/icons/empty-fav-icon.png";
 	$scope.favBtn = $scope.unfavImg;
@@ -158,6 +162,9 @@ wireframeApp.controller('hairStyleController',[ function($scope) {
 		// console.log("just added : ");
 		// console.log($scope.favs);
 	}
+
+	$cookieStore.put('myFavs', $scope.favs);
+
 }]);
 
 $( window ).load( function() {
