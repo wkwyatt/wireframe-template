@@ -139,12 +139,15 @@ wireframeApp.controller('hairStyleController', function($scope, $rootScope){
 	];
 
 	$scope.toggleFavorite = function($wigObject){
-		if ($scope.favBtn == $scope.unfavImg) {
+		if ($rootScope.favs.indexOf($wigObject) > -1) {
+			console.log($rootScope.favs);
+			$scope.favBtn = $scope.unfavImg;
+			$rootScope.favs.splice($rootScope.favs.indexOf($wigObject), 1);
+			console.log($rootScope.favs);
+		} else {
 			$scope.favBtn = $scope.favImg;
 			$rootScope.favs.push($wigObject);
-		} else {
-			$scope.favBtn = $scope.unfavImg;
-			$rootScope.favs.splice(favs.indexOf($wigObject))
+			// console.log($rootScope.favs);
 		}
 		
 		$( "#sortable" ).sortable();
@@ -155,8 +158,8 @@ wireframeApp.controller('hairStyleController', function($scope, $rootScope){
 });
 
 function favoritesController($scope, $rootScope) {
-	console.log("this is favs : " + $rootScope.favs);
-	// $scope.favs = $rootScope.favs;
+	// console.log("this is favs : " + $rootScope.favs);
+	// $scope.favs = $rootScope.favs;A
 }
 $( window ).load( function() {
 
