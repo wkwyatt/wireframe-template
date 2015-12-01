@@ -6,6 +6,9 @@ var wireframeApp = angular.module('wireframeApp', []);
 wireframeApp.controller('favoritesController', favoritesController);
 wireframeApp.controller('hairStyleController', function($scope, $rootScope){
 	$rootScope.favs = [];
+	$scope.favImg = "assets/images/icons/fav-icon.png";
+	$scope.unfavImg = "assets/images/icons/empty-fav-icon.png";
+	$scope.favBtn = $scope.unfavImg;
 	$scope.wigs = [
 		{
 			name: "Emotion",
@@ -136,11 +139,18 @@ wireframeApp.controller('hairStyleController', function($scope, $rootScope){
 	];
 
 	$scope.toggleFavorite = function($wigObject){
-		$rootScope.favs.push($wigObject);
+		if ($scope.favBtn == $scope.unfavImg) {
+			$scope.favBtn = $scope.favImg;
+			$rootScope.favs.push($wigObject);
+		} else {
+			$scope.favBtn = $scope.unfavImg;
+			$rootScope.favs.splice(favs.indexOf($wigObject))
+		}
+		
 		$( "#sortable" ).sortable();
    		$( "#sortable" ).disableSelection();
-		console.log("just added : ");
-		console.log($rootScope.favs);
+		// console.log("just added : ");
+		// console.log($rootScope.favs);
 	}
 });
 
