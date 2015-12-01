@@ -3,9 +3,8 @@
 var favorites = 0;
 
 var wireframeApp = angular.module('wireframeApp', []);
-wireframeApp.controller('favoritesController', favoritesController);
-wireframeApp.controller('hairStyleController', function($scope, $rootScope){
-	$rootScope.favs = [];
+wireframeApp.controller('hairStyleController', function($scope){
+	$scope.favs = [];
 	$scope.favImg = "assets/images/icons/fav-icon.png";
 	$scope.unfavImg = "assets/images/icons/empty-fav-icon.png";
 	$scope.favBtn = $scope.unfavImg;
@@ -139,28 +138,26 @@ wireframeApp.controller('hairStyleController', function($scope, $rootScope){
 	];
 
 	$scope.toggleFavorite = function($wigObject){
-		if ($rootScope.favs.indexOf($wigObject) > -1) {
-			console.log($rootScope.favs);
+		if ($scope.favs.indexOf($wigObject) > -1) {
+			console.log($scope.favs.length);
 			$scope.favBtn = $scope.unfavImg;
-			$rootScope.favs.splice($rootScope.favs.indexOf($wigObject), 1);
-			console.log($rootScope.favs);
+			delete $wigObject.favorite;
+			$scope.favs.splice($scope.favs.indexOf($wigObject), 1);
+			console.log($scope.favs);
 		} else {
 			$scope.favBtn = $scope.favImg;
-			$rootScope.favs.push($wigObject);
-			// console.log($rootScope.favs);
+			$wigObject.favorite = true;
+			$scope.favs.push($wigObject);
+			// console.log($scope.favs);
 		}
 		
 		$( "#sortable" ).sortable();
    		$( "#sortable" ).disableSelection();
 		// console.log("just added : ");
-		// console.log($rootScope.favs);
+		// console.log($scope.favs);
 	}
 });
 
-function favoritesController($scope, $rootScope) {
-	// console.log("this is favs : " + $rootScope.favs);
-	// $scope.favs = $rootScope.favs;A
-}
 $( window ).load( function() {
 
 

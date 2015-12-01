@@ -16,7 +16,7 @@
 	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
 
 </head>
-<body>
+<body ng-controller="hairStyleController">
 	<!-- Navigation and header container -->
 	<div id="header">
 				<div id="logo-image">
@@ -283,7 +283,7 @@
 			  	</form>
 			  </div>
 
-			  <div id="isotope-wrapper" ng-controller="hairStyleController">
+			  <div id="isotope-wrapper">
 			  	<div class="isotope">
 			  		<div class="hair-style {{wig.style}} {{wig.color}}" ng-repeat="wig in wigs" data-category="{{wig.style}}">
 			  			<img class="wig-image" src="{{wig.image}}">
@@ -291,12 +291,12 @@
 			  			<p class="style">{{wig.style}}</p>
 			  			<p class="color">{{wig.color}}</p>
 			  			<p class="price">{{wig.price}}</p>
-			  			<button ng-click="toggleFavorite(wig)" class="fav-btn"><img src="{{favBtn}}"></button>
+			  			<button ng-click="toggleFavorite(wig)" class="fav-btn"><img src="{{(favs.indexOf(wig) > -1) ? favImg : unfavImg}}"></button>
 			  		</div>
 			  	</div>
 			  </div>
 			  <!-- ------------------------------- -->
-			<div id="user-favs" ng-controller="favoritesController">
+			<div id="user-favs">
 			  	<div id="favorites-tab">
 			  		Favorites<span class="arrow"></span>
 
@@ -307,7 +307,7 @@
 			  			<h3 class="name">{{wig.name}}</h3>
 			  			<p class="price">{{wig.price}}</p>
 			  			<button>Add to cart</button>
-			  			<button ng-click="toggleFavorite(wig)" class="fav-btn"><img src="{{favBtn}}"></button>
+			  			<button ng-click="toggleFavorite(wig)" class="fav-btn"><img src="{{(favs.indexOf(wig) > -1) ? favImg : unfavImg}}"></button>
 			  		</div>
 				  	<!-- <div class="saved-favorites">
 				  		<div class="hair-style ui-state-default">
