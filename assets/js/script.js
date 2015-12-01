@@ -5,7 +5,7 @@ var favorites = 0;
 var wireframeApp = angular.module('wireframeApp', ['ngCookies']);
 wireframeApp.controller('hairStyleController',[ '$scope', '$cookies', '$cookieStore', function($scope, $cookies, $cookieStore) {
 	console.log($cookies);
-	$scope.favs = $cookieStore.get('myFavs');
+	$scope.favs = $cookies.myFavs;
 	if ($scope.favs == undefined) {
 		$scope.favs = [];	
 	}
@@ -163,7 +163,7 @@ wireframeApp.controller('hairStyleController',[ '$scope', '$cookies', '$cookieSt
 		// console.log($scope.favs);
 	}
 
-	$cookieStore.put('myFavs', $scope.favs);
+	$cookies.myFavs = $scope.favs;
 
 }]);
 
