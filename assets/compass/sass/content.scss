@@ -40,11 +40,18 @@
 	bottom:0;
 	right: 30px;
 	background-color: #ddd;
-	height: 0;
 	transition: height 1s;
 	.hair-style {
 		width: 155px;
 	}
+}
+
+.favs-open {
+	height: auto;
+}
+
+.favs-closed {
+	height: 0;
 }
 
 #favorites-tab {

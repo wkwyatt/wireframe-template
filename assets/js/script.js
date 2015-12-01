@@ -2,8 +2,9 @@
 // external js: isotope.pkgd.js
 var favorites = 0;
 
-var wireframeApp = angular.module('wireframeApp', []);
-wireframeApp.controller('hairStyleController', function($scope){
+var wireframeApp = angular.module('wireframeApp', ['ngCookies']);
+wireframeApp.controller('hairStyleController',[ function($scope) {
+	console.log($scope);
 	$scope.favs = [];
 	$scope.favImg = "assets/images/icons/fav-icon.png";
 	$scope.unfavImg = "assets/images/icons/empty-fav-icon.png";
@@ -137,6 +138,7 @@ wireframeApp.controller('hairStyleController', function($scope){
 		}	
 	];
 
+
 	$scope.toggleFavorite = function($wigObject){
 		if ($scope.favs.indexOf($wigObject) > -1) {
 			console.log($scope.favs.length);
@@ -156,7 +158,7 @@ wireframeApp.controller('hairStyleController', function($scope){
 		// console.log("just added : ");
 		// console.log($scope.favs);
 	}
-});
+}]);
 
 $( window ).load( function() {
 
@@ -305,11 +307,9 @@ if ($(this).scrollTop() > 100){
   
   // favorites setup
   $('#favorites-tab').click(function(){
-  	if ($('#user-favs').height() <= 1) {
-  		$('#user-favs').height("auto");
-  	} else {
-  		$('#user-favs').height(0);
-  	}
+  	$('#user-favs').toggleClass('favs-closed');
+  	$('#user-favs').toggleClass('favs-open');
+
   	
   });
 

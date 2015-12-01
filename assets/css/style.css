@@ -202,15 +202,24 @@
   bottom: 0;
   right: 30px;
   background-color: #ddd;
-  height: 0;
   transition: height 1s;
 }
-/* line 45, ../compass/sass/content.scss */
+/* line 44, ../compass/sass/content.scss */
 #user-favs .hair-style {
   width: 155px;
 }
 
-/* line 50, ../compass/sass/content.scss */
+/* line 49, ../compass/sass/content.scss */
+.favs-open {
+  height: auto;
+}
+
+/* line 53, ../compass/sass/content.scss */
+.favs-closed {
+  height: 0;
+}
+
+/* line 57, ../compass/sass/content.scss */
 #favorites-tab {
   position: absolute;
   text-align: center;
@@ -223,7 +232,7 @@
   border-radius: 15px 15px 0 0;
 }
 
-/* line 62, ../compass/sass/content.scss */
+/* line 69, ../compass/sass/content.scss */
 .saved-favorites {
   float: right;
   border: 1px solid black;
