@@ -4,7 +4,7 @@ var favorites = 0;
 
 var wireframeApp = angular.module('wireframeApp', ['ngCookies']);
 wireframeApp.controller('hairStyleController',[ '$scope', '$cookies', '$cookieStore', function($scope, $cookies, $cookieStore) {
-	console.log($cookies);
+	console.log($cookies.myFavs);
 	$scope.favs = $cookies.myFavs;
 	if ($scope.favs == undefined) {
 		$scope.favs = [];	
@@ -142,20 +142,25 @@ wireframeApp.controller('hairStyleController',[ '$scope', '$cookies', '$cookieSt
 		}	
 	];
 
-
 	$scope.toggleFavorite = function($wigObject){
 		if ($scope.favs.indexOf($wigObject) > -1) {
-			console.log($scope.favs.length);
 			$scope.favBtn = $scope.unfavImg;
 			delete $wigObject.favorite;
+			delete $wigObject.parentIndex;
 			$scope.favs.splice($scope.favs.indexOf($wigObject), 1);
 			console.log($scope.favs);
 		} else {
 			$scope.favBtn = $scope.favImg;
+			$wigObject.parentIndex = $scope.wigs.indexOf($wigObject);
+			console.log("parentIndex of wig object added:")
+			console.log($wigObject.parentIndex);
 			$wigObject.favorite = true;
 			$scope.favs.push($wigObject);
 			// console.log($scope.favs);
 		}
+
+		$cookies.myFavs = $scope.favs;
+
 		
 		$( "#sortable" ).sortable();
    		$( "#sortable" ).disableSelection();
@@ -163,7 +168,6 @@ wireframeApp.controller('hairStyleController',[ '$scope', '$cookies', '$cookieSt
 		// console.log($scope.favs);
 	}
 
-	$cookies.myFavs = $scope.favs;
 
 }]);
 
@@ -316,7 +320,6 @@ if ($(this).scrollTop() > 100){
   $('#favorites-tab').click(function(){
   	$('#user-favs').toggleClass('favs-closed');
   	$('#user-favs').toggleClass('favs-open');
-
   	
   });
 
