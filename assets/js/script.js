@@ -5,7 +5,8 @@ var favorites = 0;
 var wireframeApp = angular.module('wireframeApp', ['ngCookies']);
 wireframeApp.controller('hairStyleController',[ '$scope', '$cookies', '$cookieStore', function($scope, $cookies, $cookieStore) {
 	console.log($cookies.myFavs);
-	$scope.favs = $cookies.myFavs;
+	console.log(JSON.parse($cookies.myFavs));
+	$scope.favs = JSON.parse($cookies.myFavs);
 	if ($scope.favs == undefined) {
 		$scope.favs = [];	
 	}
@@ -159,8 +160,7 @@ wireframeApp.controller('hairStyleController',[ '$scope', '$cookies', '$cookieSt
 			// console.log($scope.favs);
 		}
 
-		$cookies.myFavs = $scope.favs;
-
+		$cookies.myFavs = JSON.stringify($scope.favs);
 		
 		$( "#sortable" ).sortable();
    		$( "#sortable" ).disableSelection();
