@@ -237,6 +237,7 @@
   float: right;
   border: 1px solid black;
   padding: 10px;
+  max-height: 350px;
 }
 
 /* line 6, ../compass/sass/style.scss */
