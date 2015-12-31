@@ -2,32 +2,106 @@
 var favorites = 0;
 
 var wireframeApp = angular.module('wireframeApp', ['ngCookies']);
+
+// wireframeApp.config(['$rootScope', '$location', '$myFactory',function() {
+  
+// }]);
+wireframeApp.run(function run($rootScope, $http) {
+    $http.get('http://localhost:4040/confirm-login')
+        .success(function (err, user) {
+            console.log("========run session======");
+            console.log(user);
+            console.log("========run session======");
+            if (user && user.userId) {
+                $rootScope.user = user;
+            }
+        });
+});
+
 wireframeApp.controller('hairStyleController',[ '$scope', '$http', '$cookies', '$cookieStore', function($scope, $http, $cookies, $cookieStore) {
-	$scope.loggedIn = false;
+  $scope.favs = [];
+    
+
+  $scope.register = function (){
+    console.log("registering");
+    $http.post('http://localhost:4040/register', { username: $scope.username, password: $scope.password})
+    // success code
+    .success(function (data, status){
+      if (data.err){
+          $scope.loggedIn = false; //Keep the form visible so they can try again
+          $scope.message = data.err;
+      } else {
+          $scope.loggedIn = true;
+      }
+    })
+    // handle error
+    .error(function (data){});
+  }
+
+  $scope.login = function (){
+    console.log("logging in ======ang");
+    $http.post('http://localhost:4040/login', { withCredentials: true, username: $scope.username, password: $scope.password})
+    // success code
+    .success(function (data, status){
+      if (data.err){
+          $scope.loggedIn = false; //Keep the form visible so they can try again
+          $scope.message = data.err;
+      } else {
+          if (data.status == "success") {
+            $cookies.username = data.username;
+            $scope.loggedIn = true;
+          } else {
+            $scope.message = "Username or Password is incorrect"
+          }
+      }
+    })
+    // handle error
+    .error(function (data){});
+  }
+
+  $scope.logout = function (){
+    console.log("logging out");
+    $http.get('http://localhost:4040/logout').success(function (data){
+      if (data.err){
+        console.log(data.err);
+      } else {
+        $scope.loggedIn = false;
+        $cookies.remove('username'); 
+      }
+
+    });
+  }
 
   if ($cookies.myFavs != undefined) {
-		$scope.favs = JSON.parse($cookies.myFavs);
-		console.log("===========");
-		console.log($cookies.myFavs);
-		console.log("===========");
-	} else {
-		$scope.favs = [];	
-	}
+    $scope.favs = JSON.parse($cookies.myFavs);
+    console.log("===========");
+    console.log($cookies.myFavs);
+    console.log("===========");
+  } else {
+    $scope.favs = []; 
+  }
 
-	$scope.favImg = "assets/images/icons/fav-icon.png";
-	$scope.unfavImg = "assets/images/icons/empty-fav-icon.png";
-	$scope.favBtn = $scope.unfavImg;
+  $scope.favImg = "assets/images/icons/fav-icon.png";
+  $scope.unfavImg = "assets/images/icons/empty-fav-icon.png";
+  $scope.favBtn = $scope.unfavImg;
 
-	$http.get('http://localhost:4040/api/hairUnits/get').then(function (result) {
-		console.log(result);
-		$scope.wigs = result.data;
-	});
+  $http.get('http://localhost:4040/api/hairUnits/get').then(function (result) {
+    console.log(result);
+    $scope.wigs = result.data;
+  });
 
+  $scope.showFavs = function(){
+     if ($scope.favs.length < 1){
+      $scope.hasFavorites = false;
+    } else {
+      $scope.hasFavorites = true;
+    }
+  }
 
-	$scope.toggleFavorite = function($wigObject){
-		if ($scope.favs.indexOf($wigObject) > -1) {
-			$scope.favBtn = $scope.unfavImg;
-			delete $wigObject.favorite;
+  $scope.toggleFavorite = function($wigObject){
+    if ($scope.favs.indexOf($wigObject) > -1) {
+      $scope.favBtn = $scope.unfavImg;
+      delete $wigObject.favorite;
 			delete $wigObject.parentIndex;
 			$scope.favs.splice($scope.favs.indexOf($wigObject), 1);
 			console.log($scope.favs);
@@ -41,15 +115,15 @@ wireframeApp.controller('hairStyleController',[ '$scope', '$http', '$cookies', '
 			// console.log($scope.favs);
 		}
 
+    $scope.showFavs();
 		$cookies.myFavs = JSON.stringify($scope.favs);
-		
 		$( "#sortable" ).sortable();
-   		$( "#sortable" ).disableSelection();
+   	$( "#sortable" ).disableSelection();
 		// console.log("just added : ");
 		// console.log($scope.favs);
 	}
 
-
+  $scope.showFavs();
 }]);
 
 $( window ).load( function() {

@@ -110,13 +110,27 @@
   width: 100px;
 }
 /* line 107, ../compass/sass/header.scss */
+.navbar #login-header {
+  float: right;
+  padding: 15px;
+}
+/* line 110, ../compass/sass/header.scss */
+.navbar #login-header #logout {
+  float: right;
+  margin-left: 15px;
+}
+/* line 113, ../compass/sass/header.scss */
+.navbar #login-header #logout:hover {
+  text-decoration: underline;
+}
+/* line 118, ../compass/sass/header.scss */
 .navbar ul {
   display: inline-block;
   list-style: none;
   margin: 0;
   padding: 15px;
 }
-/* line 112, ../compass/sass/header.scss */
+/* line 123, ../compass/sass/header.scss */
 .navbar ul li {
   display: inline-block;
   float: left;
@@ -125,30 +139,30 @@
   font-weight: bold;
   line-height: 1px;
 }
-/* line 119, ../compass/sass/header.scss */
+/* line 130, ../compass/sass/header.scss */
 .navbar ul li a {
   text-decoration: none;
   padding: 0 10px;
   color: white;
   border-left: 1px solid #d3137a;
 }
-/* line 127, ../compass/sass/header.scss */
+/* line 138, ../compass/sass/header.scss */
 .navbar ul li:first-child a {
   border: none;
 }
 
-/* line 133, ../compass/sass/header.scss */
+/* line 144, ../compass/sass/header.scss */
 .navbar-right {
   background: none;
 }
-/* line 135, ../compass/sass/header.scss */
+/* line 146, ../compass/sass/header.scss */
 .navbar-right ul {
   display: inline-block;
   list-style: none;
   margin: 0;
   padding: 15px;
 }
-/* line 142, ../compass/sass/header.scss */
+/* line 153, ../compass/sass/header.scss */
 .navbar-right ul li a {
   text-decoration: none;
   font-size: 18px;
@@ -156,12 +170,12 @@
   color: white;
   border-left: 1px solid #d3137a;
 }
-/* line 151, ../compass/sass/header.scss */
+/* line 162, ../compass/sass/header.scss */
 .navbar-right ul li:first-child a {
   border: none;
 }
 
-/* line 158, ../compass/sass/header.scss */
+/* line 169, ../compass/sass/header.scss */
 #register-box {
   position: absolute;
   z-index: 1;
@@ -173,7 +187,7 @@
   background: #fff;
   background: rgba(255, 255, 255, 0.8);
 }
-/* line 168, ../compass/sass/header.scss */
+/* line 179, ../compass/sass/header.scss */
 #register-box #register-header {
   max-width: 80%;
   margin: auto;
@@ -184,21 +198,21 @@
   line-height: 1em;
   padding-top: 10px;
 }
-/* line 178, ../compass/sass/header.scss */
+/* line 189, ../compass/sass/header.scss */
 #register-box .form-group {
   padding: 0 20px;
 }
-/* line 181, ../compass/sass/header.scss */
+/* line 192, ../compass/sass/header.scss */
 #register-box .register-btn-container {
   text-align: center;
   margin: 30px auto;
 }
-/* line 184, ../compass/sass/header.scss */
+/* line 195, ../compass/sass/header.scss */
 #register-box .register-btn-container #or-button {
   text-align: center;
   font-size: 20px;
 }
-/* line 188, ../compass/sass/header.scss */
+/* line 199, ../compass/sass/header.scss */
 #register-box .register-btn-container button {
   width: 50%;
   padding: 10px;
@@ -254,23 +268,24 @@
   right: 30px;
   background-color: #ddd;
   transition: height 1s;
+  z-index: 2;
 }
-/* line 44, ../compass/sass/content.scss */
+/* line 45, ../compass/sass/content.scss */
 #user-favs .hair-style {
   width: 155px;
 }
 
-/* line 49, ../compass/sass/content.scss */
+/* line 50, ../compass/sass/content.scss */
 .favs-open {
   height: auto;
 }
 
-/* line 53, ../compass/sass/content.scss */
+/* line 54, ../compass/sass/content.scss */
 .favs-closed {
   height: 0;
 }
 
-/* line 57, ../compass/sass/content.scss */
+/* line 58, ../compass/sass/content.scss */
 #favorites-tab {
   position: absolute;
   text-align: center;
@@ -283,7 +298,7 @@
   border-radius: 15px 15px 0 0;
 }
 
-/* line 69, ../compass/sass/content.scss */
+/* line 70, ../compass/sass/content.scss */
 .saved-favorites {
   float: right;
   border: 1px solid black;
