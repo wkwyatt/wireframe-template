@@ -1,7 +1,7 @@
 
 var favorites = 0;
 
-var wireframeApp = angular.module('wireframeApp', ['ngCookies']);
+var wireframeApp = angular.module('wireframeApp', ['ngCookies','ngRoute']);
 
 // wireframeApp.config(['$rootScope', '$location', '$myFactory',function() {
   
@@ -16,6 +16,25 @@ wireframeApp.run(function run($rootScope, $http) {
                 $rootScope.user = user;
             }
         });
+});
+
+wireframeApp.config(function($routeProvider) {
+    $routeProvider
+    // Route for home page
+    .when('/',{
+        templateUrl: 'pages/home.html',
+        controller: 'hairStyleController'
+    })
+    // Route for wigs
+    .when('/hair',{
+        templateUrl: 'pages/unitcatalog.html',
+        controller: 'hairStyleController'
+    })
+    // Route for oils
+    .when('/oils',{
+        templateUrl: 'pages/oils.html',
+        controller: 'hairStyleController'
+    })
 });
 
 wireframeApp.controller('hairStyleController',[ '$scope', '$http', '$cookies', '$cookieStore', function($scope, $http, $cookies, $cookieStore) {
