@@ -1,79 +1,82 @@
-<div class="hair-styles">
-  	<!-- ISOTOPE EXAMPLE WITH HAIR DROPDOWN-->
-  	<h2>Filter</h2>
-  	<form class="form-inline">
-  		<!-- <div id="filters" class="">   -->
-  			<select name="" class="filters-select form-control">
-  				<option  value="*">Show All</option>
-  				<option  value=".long">Long</option>
-  				<option  value=".short">Short</option>
-  				<option  value=".red">Red</option>
-  				<option  value=".black">Black</option>
-  				<option  value=".blonde">Blonde</option>
-  				<option  value="priceGreaterThan500">More than $500</option>
-  				<option  value=":not(.blonde)">Not Blonde</option>
-  			</select>
-  			<!-- ISOTOPE EXAMPLE WITH HAIR BUTTONS-->
-  			<!-- <button class="button is-checked" data-filter="*">show all</button>
-  			<button class="button" data-filter=".long">Long</button>
-  			<button class="button" data-filter=".short">Short</button>
-  			<button class="button" data-filter=".red">Red</button>
-  			<button class="button" data-filter=".black">Black</button>
-  			<button class="button" data-filter=".blonde">Blonde</button>
-  			<button class="button" data-filter=".brunnette">Brunnette</button>
-  			<button class="button" data-filter="priceGreaterThan500">More than $500</button>
-  			<button class="button" data-filter=":not(.blonde)">Not Blonde</button> -->
-  		<!-- </div> -->
+<div class="catalog-wrapper">
+    <h2>Designer Units</h2>
+    <div class="hair-styles">
+    	<!-- ISOTOPE EXAMPLE WITH HAIR DROPDOWN-->
+    	<h2>Filter</h2>
+    	<form class="form-inline">
+    		<!-- <div id="filters" class="">   -->
+    			<select name="" class="filters-select form-control">
+    				<option  value="*">Show All</option>
+    				<option  value=".long">Long</option>
+    				<option  value=".short">Short</option>
+    				<option  value=".red">Red</option>
+    				<option  value=".black">Black</option>
+    				<option  value=".blonde">Blonde</option>
+    				<option  value="priceGreaterThan500">More than $500</option>
+    				<option  value=":not(.blonde)">Not Blonde</option>
+    			</select>
+    			<!-- ISOTOPE EXAMPLE WITH HAIR BUTTONS-->
+    			<!-- <button class="button is-checked" data-filter="*">show all</button>
+    			<button class="button" data-filter=".long">Long</button>
+    			<button class="button" data-filter=".short">Short</button>
+    			<button class="button" data-filter=".red">Red</button>
+    			<button class="button" data-filter=".black">Black</button>
+    			<button class="button" data-filter=".blonde">Blonde</button>
+    			<button class="button" data-filter=".brunnette">Brunnette</button>
+    			<button class="button" data-filter="priceGreaterThan500">More than $500</button>
+    			<button class="button" data-filter=":not(.blonde)">Not Blonde</button> -->
+    		<!-- </div> -->
 
 
-  		<h2>Sort</h2>
-  		<!-- <div id="sorts" class="button-group">   -->
-			<select name="" class="sort-select form-control">
-  				<option  value="priceLow">Price: lowest first</option>
-  				<option  value="priceHigh">Price: highest first</option>
-  				<option  value="name">A - Z</option>
-  				<option  value="color">Color</option>
-  				<option  value="category">Category</option>
-  				
-  			</select>
+    		<h2>Sort</h2>
+    		<!-- <div id="sorts" class="button-group">   -->
+  			<select name="" class="sort-select form-control">
+    				<option  value="priceLow">Price: lowest first</option>
+    				<option  value="priceHigh">Price: highest first</option>
+    				<option  value="name">A - Z</option>
+    				<option  value="color">Color</option>
+    				<option  value="category">Category</option>
+    				
+    			</select>
 
-  			<!-- ISOTOPE EXAMPLE WITH HAIR DROPDOWN-->
-  		<!-- <button class="button is-checked" data-sort-by="original-order">Original order</button>
-  			<button class="button" data-sort-by="priceLow">Price: lowest first</button>
-  			<button class="button" data-sort-by="priceHigh">Price: highest first</button>
-  			<button class="button" data-sort-by="name">A - Z</button>
-  			<button class="button" data-sort-by="color">Color</button>
-  			<button class="button" data-sort-by="category">Category</button>
-  		</div> -->
-  	</form>
-  </div>
+    			<!-- ISOTOPE EXAMPLE WITH HAIR DROPDOWN-->
+    		<!-- <button class="button is-checked" data-sort-by="original-order">Original order</button>
+    			<button class="button" data-sort-by="priceLow">Price: lowest first</button>
+    			<button class="button" data-sort-by="priceHigh">Price: highest first</button>
+    			<button class="button" data-sort-by="name">A - Z</button>
+    			<button class="button" data-sort-by="color">Color</button>
+    			<button class="button" data-sort-by="category">Category</button>
+    		</div> -->
+    	</form>
+    </div>
 
-  <div id="isotope-wrapper">
-  	<div class="isotope">
-  		<div class="hair-style {{wig.style}} {{wig.color}}" ng-repeat="wig in wigs" data-category="{{wig.style}}">
-  			<img class="wig-image" src="{{wig.image}}">
-  			<h3 class="name">{{wig.name}}</h3>
-  			<p class="style">{{wig.style}}</p>
-  			<p class="color">{{wig.color}}</p>
-  			<p class="price">{{wig.price}}</p>
-  			<button ng-click="toggleFavorite(wig)" class="fav-btn"><img src="{{(favs.indexOf(wig) > -1) ? favImg : unfavImg}}"></button>
-  		</div>
+    <div id="isotope-wrapper">
+    	<div class="isotope">
+    		<div class="hair-style {{wig.style}} {{wig.color}}" ng-repeat="wig in wigs" data-category="{{wig.style}}">
+    			<img class="wig-image" src="{{wig.image}}">
+    			<h3 class="name">{{wig.name}}</h3>
+    			<p class="style">{{wig.style}}</p>
+    			<p class="color">{{wig.color}}</p>
+    			<p class="price">{{wig.price}}</p>
+    			<button ng-click="toggleFavorite(wig)" class="fav-btn"><img src="{{(favs.indexOf(wig) > -1) ? favImg : unfavImg}}"></button>
+    		</div>
+    	</div>
+    </div>
+    <!-- --------------FAVORITES----------------- -->
+
+  <div id="user-favs" class="favs-closed" ng-show="hasFavorites">
+    	<div id="favorites-tab">
+    		Favorites<span class="arrow"></span>
+
+    	</div>
+    	<div id="sortable" class="saved-favorites">
+    		<div class="hair-style ui-state-default" ng-repeat="wig in favs">
+    			<img class="wig-image" src="{{wig.image}}">
+    			<h3 class="name">{{wig.name}}</h3>
+    			<p class="price">{{wig.price}}</p>
+    			<button>Add to cart</button>
+    			<button ng-click="toggleFavorite(wig)" class="fav-btn"><img src="{{(favs.indexOf(wig) > -1) ? favImg : unfavImg}}"></button>
+    		</div>
   	</div>
   </div>
-  <!-- --------------FAVORITES----------------- -->
-
-<div id="user-favs" class="favs-closed" ng-show="hasFavorites">
-  	<div id="favorites-tab">
-  		Favorites<span class="arrow"></span>
-
-  	</div>
-  	<div id="sortable" class="saved-favorites">
-  		<div class="hair-style ui-state-default" ng-repeat="wig in favs">
-  			<img class="wig-image" src="{{wig.image}}">
-  			<h3 class="name">{{wig.name}}</h3>
-  			<p class="price">{{wig.price}}</p>
-  			<button>Add to cart</button>
-  			<button ng-click="toggleFavorite(wig)" class="fav-btn"><img src="{{(favs.indexOf(wig) > -1) ? favImg : unfavImg}}"></button>
-  		</div>
-	</div>
 </div>

@@ -308,12 +308,27 @@
   width: 100%;
 }
 
-/* line 5, ../compass/sass/_catalog.scss */
+/* line 1, ../compass/sass/_catalog.scss */
+.catalog-wrapper {
+  overflow: hidden;
+  margin-top: 50px;
+  text-align: center;
+}
+
+/* line 6, ../compass/sass/_catalog.scss */
+.hair-styles {
+  float: left;
+  width: 200px;
+  margin-top: 50px;
+  background: white;
+}
+
+/* line 15, ../compass/sass/_catalog.scss */
 #sortable div {
   float: left;
 }
 
-/* line 10, ../compass/sass/_catalog.scss */
+/* line 20, ../compass/sass/_catalog.scss */
 .fav-btn {
   position: absolute;
   height: 40px;
@@ -324,7 +339,7 @@
   border: none;
 }
 
-/* line 20, ../compass/sass/_catalog.scss */
+/* line 30, ../compass/sass/_catalog.scss */
 #user-favs {
   position: fixed;
   bottom: 0;
@@ -333,22 +348,22 @@
   transition: height 1s;
   z-index: 2;
 }
-/* line 27, ../compass/sass/_catalog.scss */
+/* line 37, ../compass/sass/_catalog.scss */
 #user-favs .hair-style {
   width: 155px;
 }
 
-/* line 32, ../compass/sass/_catalog.scss */
+/* line 42, ../compass/sass/_catalog.scss */
 .favs-open {
   height: auto;
 }
 
-/* line 36, ../compass/sass/_catalog.scss */
+/* line 46, ../compass/sass/_catalog.scss */
 .favs-closed {
   height: 0;
 }
 
-/* line 40, ../compass/sass/_catalog.scss */
+/* line 50, ../compass/sass/_catalog.scss */
 #favorites-tab {
   position: absolute;
   text-align: center;
@@ -361,7 +376,7 @@
   border-radius: 15px 15px 0 0;
 }
 
-/* line 52, ../compass/sass/_catalog.scss */
+/* line 62, ../compass/sass/_catalog.scss */
 .saved-favorites {
   float: right;
   border: 1px solid black;
@@ -369,7 +384,7 @@
   max-height: 350px;
 }
 
-/* line 59, ../compass/sass/_catalog.scss */
+/* line 69, ../compass/sass/_catalog.scss */
 .hair-style {
   background: white;
   position: relative;
@@ -383,13 +398,13 @@
   -moz-box-shadow: -2px 10px 13px 2px rgba(0, 0, 0, 0.75);
   box-shadow: -2px 10px 13px 2px rgba(0, 0, 0, 0.75);
 }
-/* line 71, ../compass/sass/_catalog.scss */
+/* line 81, ../compass/sass/_catalog.scss */
 .hair-style img {
   width: 100%;
 }
 
 /* ---- button ---- */
-/* line 81, ../compass/sass/_catalog.scss */
+/* line 91, ../compass/sass/_catalog.scss */
 .button {
   display: inline-block;
   padding: 0.5em 1.0em;
@@ -404,39 +419,39 @@
   cursor: pointer;
 }
 
-/* line 95, ../compass/sass/_catalog.scss */
+/* line 105, ../compass/sass/_catalog.scss */
 .button:hover {
   background-color: #8CF;
   text-shadow: 0 1px rgba(255, 255, 255, 0.5);
   color: #222;
 }
 
-/* line 101, ../compass/sass/_catalog.scss */
+/* line 111, ../compass/sass/_catalog.scss */
 .button:active,
 .button.is-checked {
   background-color: #28F;
 }
 
-/* line 106, ../compass/sass/_catalog.scss */
+/* line 116, ../compass/sass/_catalog.scss */
 .button.is-checked {
   color: white;
   text-shadow: 0 -1px rgba(0, 0, 0, 0.8);
 }
 
-/* line 111, ../compass/sass/_catalog.scss */
+/* line 121, ../compass/sass/_catalog.scss */
 .button:active {
   box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.8);
 }
 
 /* ---- button-group ---- */
-/* line 117, ../compass/sass/_catalog.scss */
+/* line 127, ../compass/sass/_catalog.scss */
 .button-group:after {
   content: '';
   display: block;
   clear: both;
 }
 
-/* line 123, ../compass/sass/_catalog.scss */
+/* line 133, ../compass/sass/_catalog.scss */
 .button-group .button {
   float: left;
   border-radius: 0;
@@ -444,23 +459,26 @@
   margin-right: 1px;
 }
 
-/* line 130, ../compass/sass/_catalog.scss */
+/* line 140, ../compass/sass/_catalog.scss */
 .button-group .button:first-child {
   border-radius: 0.5em 0 0 0.5em;
 }
 
-/* line 131, ../compass/sass/_catalog.scss */
+/* line 141, ../compass/sass/_catalog.scss */
 .button-group .button:last-child {
   border-radius: 0 0.5em 0.5em 0;
 }
 
 /* ---- isotope ---- */
-/* line 135, ../compass/sass/_catalog.scss */
+/* line 145, ../compass/sass/_catalog.scss */
 #isotope-wrapper {
-  background: #dfdfdf;
+  margin: 50px auto 0;
+  display: block;
+  width: calc(100% - 200px);
+  float: right;
 }
 
-/* line 139, ../compass/sass/_catalog.scss */
+/* line 152, ../compass/sass/_catalog.scss */
 .isotope {
   width: 95%;
   max-width: 1024px;
@@ -468,7 +486,7 @@
 }
 
 /* clear fix */
-/* line 147, ../compass/sass/_catalog.scss */
+/* line 160, ../compass/sass/_catalog.scss */
 .isotope:after {
   content: '';
   display: block;
@@ -476,7 +494,7 @@
 }
 
 /* ---- .element-item ---- */
-/* line 155, ../compass/sass/_catalog.scss */
+/* line 168, ../compass/sass/_catalog.scss */
 .element-item {
   position: relative;
   float: left;
@@ -486,13 +504,13 @@
   color: #262524;
 }
 
-/* line 166, ../compass/sass/_catalog.scss */
+/* line 179, ../compass/sass/_catalog.scss */
 .element-item > * {
   margin: 0;
   padding: 0;
 }
 
-/* line 171, ../compass/sass/_catalog.scss */
+/* line 184, ../compass/sass/_catalog.scss */
 .element-item .name {
   position: absolute;
   left: 10px;
@@ -503,7 +521,7 @@
   font-weight: normal;
 }
 
-/* line 182, ../compass/sass/_catalog.scss */
+/* line 195, ../compass/sass/_catalog.scss */
 .element-item .symbol {
   position: absolute;
   left: 10px;
@@ -513,14 +531,14 @@
   color: white;
 }
 
-/* line 191, ../compass/sass/_catalog.scss */
+/* line 204, ../compass/sass/_catalog.scss */
 .element-item .number {
   position: absolute;
   right: 8px;
   top: 5px;
 }
 
-/* line 197, ../compass/sass/_catalog.scss */
+/* line 210, ../compass/sass/_catalog.scss */
 .element-item .weight {
   position: absolute;
   left: 10px;
@@ -528,61 +546,61 @@
   font-size: 12px;
 }
 
-/* line 204, ../compass/sass/_catalog.scss */
+/* line 217, ../compass/sass/_catalog.scss */
 .element-item.alkali {
   background: #F00;
   background: red;
 }
 
-/* line 205, ../compass/sass/_catalog.scss */
+/* line 218, ../compass/sass/_catalog.scss */
 .element-item.alkaline-earth {
   background: #F80;
   background: #ff9900;
 }
 
-/* line 206, ../compass/sass/_catalog.scss */
+/* line 219, ../compass/sass/_catalog.scss */
 .element-item.lanthanoid {
   background: #FF0;
   background: #ccff00;
 }
 
-/* line 207, ../compass/sass/_catalog.scss */
+/* line 220, ../compass/sass/_catalog.scss */
 .element-item.actinoid {
   background: #0F0;
   background: #33ff00;
 }
 
-/* line 208, ../compass/sass/_catalog.scss */
+/* line 221, ../compass/sass/_catalog.scss */
 .element-item.transition {
   background: #0F8;
   background: #00ff66;
 }
 
-/* line 209, ../compass/sass/_catalog.scss */
+/* line 222, ../compass/sass/_catalog.scss */
 .element-item.post-transition {
   background: #0FF;
   background: cyan;
 }
 
-/* line 210, ../compass/sass/_catalog.scss */
+/* line 223, ../compass/sass/_catalog.scss */
 .element-item.metalloid {
   background: #08F;
   background: #0066ff;
 }
 
-/* line 211, ../compass/sass/_catalog.scss */
+/* line 224, ../compass/sass/_catalog.scss */
 .element-item.diatomic {
   background: #00F;
   background: #3300ff;
 }
 
-/* line 212, ../compass/sass/_catalog.scss */
+/* line 225, ../compass/sass/_catalog.scss */
 .element-item.halogen {
   background: #F0F;
   background: #cc00ff;
 }
 
-/* line 213, ../compass/sass/_catalog.scss */
+/* line 226, ../compass/sass/_catalog.scss */
 .element-item.noble-gas {
   background: #F08;
   background: #ff0099;
