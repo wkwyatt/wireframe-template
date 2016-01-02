@@ -1,135 +1,302 @@
-$(window).load(function() {
-	$('#nav > li').mouseover(function() {
-		$(this).find('ul').addClass('show-menu');
-	});
-	$('#nav > li').mouseout(function() {
-		$(this).find('ul').removeClass('show-menu');
-	});	
 
+var favorites = 0;
 
+var wireframeApp = angular.module('wireframeApp', ['ngCookies','ngRoute']);
 
-	var maxWidth = $('.item').width()
-	var imgHeight = scaleSize(maxWidth, 360, $('.item').width(), $('.item').height())[0]
-	console.log(imgHeight);
-	$('.item img').height(imgHeight);
-	var imgWidth = scaleSize(maxWidth, 360, $('.item').width(), $('.item').height())[0]
-	$('.item img').width(imgWidth);
-	var marginTop = -imgWidth/8+'px';
-	console.log(imgWidth);
-	$('.item').css('top',(marginTop));
-	// $('.item').height($('.item img').height());
-	// $('.item').width($('.item img').width());
-	$('.item img').show();
-
-	$('.promo-vids').fitVids();
+// wireframeApp.config(['$rootScope', '$location', '$myFactory',function() {
+  
+// }]);
+wireframeApp.run(function run($rootScope, $http) {
+    $http.get('http://localhost:4040/confirm-login')
+        .success(function (err, user) {
+            console.log("========run session======");
+            console.log(user);
+            console.log("========run session======");
+            if (user && user.userId) {
+                $rootScope.user = user;
+            }
+        });
 });
 
-$(window).resize(function() {
-	var viewportWidth = $(window).width();
-	var viewportHeight = $(window).height();
-	console.log(viewportHeight);
-	var maxWidth = $('.item').width()
-	var imgHeight = scaleSize(maxWidth, 360, $('.item').width(), $('.item').height())[0]
-	console.log(imgHeight);
-	$('.item img').height(imgHeight);
-	var imgWidth = scaleSize(maxWidth, 360, $('.item').width(), $('.item').height())[0]
-	$('.item img').width(imgWidth);
-	var marginTop = -imgWidth/8+'px';
-	console.log(imgWidth);
-	$('.item').css('top',(marginTop));
-	// $('.item').height($('.item img').height());
-	// $('.item').width($('.item img').width());
-	$('.item img').show();
-
-	$('.promo-vids').fitVids();
+wireframeApp.config(function($routeProvider) {
+    $routeProvider
+    // Route for home page
+    .when('/',{
+        templateUrl: 'pages/home.html',
+        controller: 'hairStyleController'
+    })
+    // Route for wigs
+    .when('/hair',{
+        templateUrl: 'pages/unitcatalog.html',
+        controller: 'hairStyleController'
+    })
+    // Route for oils
+    .when('/oils',{
+        templateUrl: 'pages/oils.html',
+        controller: 'hairStyleController'
+    })
 });
 
+wireframeApp.controller('hairStyleController',[ '$scope', '$http', '$cookies', '$cookieStore', function($scope, $http, $cookies, $cookieStore) {
+  $scope.favs = [];
+    
 
-	function scaleSize(maxW, maxH, currW, currH) {
-		var ratio = currH /currW;
+  $scope.register = function (){
+    console.log("registering");
+    $http.post('http://localhost:4040/register', { username: $scope.username, password: $scope.password})
+    // success code
+    .success(function (data, status){
+      if (data.err){
+          $scope.loggedIn = false; //Keep the form visible so they can try again
+          $scope.message = data.err;
+      } else {
+          $scope.loggedIn = true;
+      }
+    })
+    // handle error
+    .error(function (data){});
+  }
 
-		if (currW >= maxW && ratio <= 1) {
-			currW = maxW;
-			currH = currH * ratio;
-		} else if (currH >= maxH) {
-			currH = maxH;
-			currW = currH / ratio;
+  $scope.login = function (){
+    console.log("logging in ======ang");
+    $http.post('http://localhost:4040/login', { withCredentials: true, username: $scope.username, password: $scope.password})
+    // success code
+    .success(function (data, status){
+      if (data.err){
+          $scope.loggedIn = false; //Keep the form visible so they can try again
+          $scope.message = data.err;
+      } else {
+          if (data.status == "success") {
+            $cookies.username = data.username;
+            $scope.loggedIn = true;
+          } else {
+            $scope.message = "Username or Password is incorrect"
+          }
+      }
+    })
+    // handle error
+    .error(function (data){});
+  }
+
+  $scope.logout = function (){
+    console.log("logging out");
+    $http.get('http://localhost:4040/logout').success(function (data){
+      if (data.err){
+        console.log(data.err);
+      } else {
+        $scope.loggedIn = false;
+        $cookies.remove('username'); 
+      }
+
+    });
+  }
+
+  if ($cookies.myFavs != undefined) {
+    $scope.favs = JSON.parse($cookies.myFavs);
+    console.log("===========");
+    console.log($cookies.myFavs);
+    console.log("===========");
+  } else {
+    $scope.favs = []; 
+  }
+
+  $scope.favImg = "assets/images/icons/fav-icon.png";
+  $scope.unfavImg = "assets/images/icons/empty-fav-icon.png";
+  $scope.favBtn = $scope.unfavImg;
+
+  $http.get('http://localhost:4040/api/hairUnits/get').then(function (result) {
+    console.log(result);
+    $scope.wigs = result.data;
+  });
+
+  $scope.showFavs = function(){
+     if ($scope.favs.length < 1){
+      $scope.hasFavorites = false;
+    } else {
+      $scope.hasFavorites = true;
+    }
+  }
+
+  $scope.toggleFavorite = function($wigObject){
+    if ($scope.favs.indexOf($wigObject) > -1) {
+      $scope.favBtn = $scope.unfavImg;
+      delete $wigObject.favorite;
+			delete $wigObject.parentIndex;
+			$scope.favs.splice($scope.favs.indexOf($wigObject), 1);
+			console.log($scope.favs);
+		} else {
+			$scope.favBtn = $scope.favImg;
+			$wigObject.parentIndex = $scope.wigs.indexOf($wigObject);
+			console.log("parentIndex of wig object added:")
+			console.log($wigObject.parentIndex);
+			$wigObject.favorite = true;
+			$scope.favs.push($wigObject);
+			// console.log($scope.favs);
 		}
 
-		console.log([currW, currH]);
-
-		return [currW, currH];
+    $scope.showFavs();
+		$cookies.myFavs = JSON.stringify($scope.favs);
+		$( "#sortable" ).sortable();
+   	$( "#sortable" ).disableSelection();
+		// console.log("just added : ");
+		// console.log($scope.favs);
 	}
 
-// ;(function( $ ){
+  $scope.showFavs();
+}]);
 
-//   'use strict';
+$( window ).load( function() {
 
-//   $.fn.fitVids = function( options ) {
-//     var settings = {
-//       customSelector: null,
-//       ignore: null
-//     };
 
-//     if(!document.getElementById('fit-vids-style')) {
-//       // appendStyles: https://github.com/toddmotto/fluidvids/blob/master/dist/fluidvids.js
-//       var head = document.head || document.getElementsByTagName('head')[0];
-//       var css = '.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}';
-//       var div = document.createElement("div");
-//       div.innerHTML = '<p>x</p><style id="fit-vids-style">' + css + '</style>';
-//       head.appendChild(div.childNodes[1]);
-//     }
+  // init Isotope
+  // var $container = $('.isotope').isotope({
+  //   itemSelector: '.element-item',
+  //   layoutMode: 'fitRows',
+  //   getSortData: {
+  //     name: '.name',
+  //     symbol: '.symbol',
+  //     number: '.number parseInt',
+  //     category: '[data-category]',
+  //     weight: function( itemElem ) {
+  //       var weight = $( itemElem ).find('.weight').text();
+  //       return parseFloat( weight.replace( /[\(\)]/g, '') );
+  //     }
+  //   }
+  // });
 
-//     if ( options ) {
-//       $.extend( settings, options );
-//     }
+  // // filter functions
+  // var filterFns = {
+  //   // show if number is greater than 50
+  //   numberGreaterThan50: function() {
+  //     var number = $(this).find('.number').text();
+  //     return parseInt( number, 10 ) > 50;
+  //   },
+  //   // show if name ends with -ium
+  //   ium: function() {
+  //     var name = $(this).find('.name').text();
+  //     return name.match( /ium$/ );
+  //   }
+  // };
 
-//     return this.each(function(){
-//       var selectors = [
-//         'iframe[src*="player.vimeo.com"]',
-//         'iframe[src*="youtube.com"]',
-//         'iframe[src*="youtube-nocookie.com"]',
-//         'iframe[src*="kickstarter.com"][src*="video.html"]',
-//         'object',
-//         'embed'
-//       ];
+  // // bind filter button click
+  // $('#filters').on( 'click', 'button', function() {
+  //   var filterValue = $( this ).attr('data-filter');
+  //   // use filterFn if matches value
+  //   filterValue = filterFns[ filterValue ] || filterValue;
+  //   $container.isotope({ filter: filterValue });
+  // });
 
-//       if (settings.customSelector) {
-//         selectors.push(settings.customSelector);
-//       }
+  // // bind sort button click
+  // $('#sorts').on( 'click', 'button', function() {
+  //   var sortByValue = $(this).attr('data-sort-by');
+  //   $container.isotope({ sortBy: sortByValue });
+  // });
+  
+  // // change is-checked class on buttons
+  // $('.button-group').each( function( i, buttonGroup ) {
+  //   var $buttonGroup = $( buttonGroup );
+  //   $buttonGroup.on( 'click', 'button', function() {
+  //     $buttonGroup.find('.is-checked').removeClass('is-checked');
+  //     $( this ).addClass('is-checked');
+  //   });
+  // });
 
-//       var ignoreList = '.fitvidsignore';
+$(window).scroll(function() {
+if ($(this).scrollTop() > 100){  
+    $('#header-wrapper').addClass("fix-nav");
+  }
+  else{
+    $('#header-wrapper').removeClass("fix-nav");
+  }
+});
 
-//       if(settings.ignore) {
-//         ignoreList = ignoreList + ', ' + settings.ignore;
-//       }
+// if ($(this).scrollTop() > 100){  
+//     $('#header-wrapper').addClass("fix-nav");
+//     $('#header-wrapper').css('background-image','url("assets/images/background-images/black-granular.png")');
+//   }
+//   else{
+//     $('#header-wrapper').removeClass("fix-nav");
+//     $('#header-wrapper').css('background-image','url("assets/images/background-images/purple-granular.png")');
+//   }
+// });
 
-//       var $allVideos = $(this).find(selectors.join(','));
-//       $allVideos = $allVideos.not('object object'); // SwfObj conflict patch
-//       $allVideos = $allVideos.not(ignoreList); // Disable FitVids on this video.
+//////////////////////////////////////////////////////
+    // init Isotope for Wigs
+  var $container = $('.isotope').isotope({
+    itemSelector: '.hair-style',
+    layoutMode: 'fitRows',
+    getSortData: {
+      name: '.name',
+      color: '.color',
+      style: '.style',
+      priceHigh: '.price parseInt',
+      priceLow: '.price parseInt',
+      category: '[data-category]'
+    },
+    sortAscending: {
+    	name: true,
+      	color: true,
+      	style: true,
+      	priceHigh: false,
+     	priceLow: true,
+     	category: true
+    }
+  });
 
-//       $allVideos.each(function(count){
-//         var $this = $(this);
-//         if($this.parents(ignoreList).length > 0) {
-//           return; // Disable FitVids on this video.
-//         }
-//         if (this.tagName.toLowerCase() === 'embed' && $this.parent('object').length || $this.parent('.fluid-width-video-wrapper').length) { return; }
-//         if ((!$this.css('height') && !$this.css('width')) && (isNaN($this.attr('height')) || isNaN($this.attr('width'))))
-//         {
-//           $this.attr('height', 9);
-//           $this.attr('width', 16);
-//         }
-//         var height = ( this.tagName.toLowerCase() === 'object' || ($this.attr('height') && !isNaN(parseInt($this.attr('height'), 10))) ) ? parseInt($this.attr('height'), 10) : $this.height(),
-//             width = !isNaN(parseInt($this.attr('width'), 10)) ? parseInt($this.attr('width'), 10) : $this.width(),
-//             aspectRatio = height / width;
-//         if(!$this.attr('id')){
-//           var videoID = 'fitvid' + count;
-//           $this.attr('id', videoID);
-//         }
-//         $this.wrap('<div class="fluid-width-video-wrapper"></div>').parent('.fluid-width-video-wrapper').css('padding-top', (aspectRatio * 100)+'%');
-//         $this.removeAttr('height').removeAttr('width');
-//       });
-//     });
-//   };
-// // Works with either jQuery or Zepto
-// })( window.jQuery || window.Zepto );
+  // filter functions
+  var filterFns = {
+    // show if number is greater than 50
+    priceGreaterThan500: function() {
+      var number = $(this).find('.price').text();
+      return parseInt( number, 10 ) > 500;
+    }
+  };
+
+  // bind filter button click
+  // $('#filters').on( 'click', 'button', function() {
+  //   var filterValue = $( this ).attr('data-filter');
+  //   // use filterFn if matches value
+  //   filterValue = filterFns[ filterValue ] || filterValue;
+  //   $container.isotope({ filter: filterValue });
+  // });
+
+   $('.filters-select').on( 'change', function() {
+    // get filter value from option value
+    var filterValue = this.value;
+    // use filterFn if matches value
+    filterValue = filterFns[ filterValue ] || filterValue;
+    $container.isotope({ filter: filterValue });
+  });
+
+  // bind sort button click
+  // $('#sorts').on('click', 'button', function() {
+  //   var sortByValue = $(this).attr('data-sort-by');
+  //   $container.isotope({ sortBy: sortByValue });
+  // });
+
+   $('.sort-select').on( 'change', function() {
+    // get filter value from option value
+    var sortByValue = this.value;
+    // use filterFn if matches value
+    $container.isotope({ sortBy: sortByValue });
+  });
+
+  // change is-checked class on buttons
+  $('.button-group').each( function( i, buttonGroup ) {
+    var $buttonGroup = $( buttonGroup );
+    $buttonGroup.on( 'click', 'button', function() {
+      $buttonGroup.find('.is-checked').removeClass('is-checked');
+      $( this ).addClass('is-checked');
+    });
+  });
+  
+  // favorites setup
+  $('#favorites-tab').click(function(){
+  	$('#user-favs').toggleClass('favs-closed');
+  	$('#user-favs').toggleClass('favs-open');
+  	
+  });
+
+   $( "#sortable" ).sortable();
+   $( "#sortable" ).disableSelection();
+});
