@@ -1,0 +1,18 @@
+{
+	"name":"callenderbeauty",
+	"version":"0.1",
+	"description":"Hair Stylist Website",
+	"main":"app.js",
+	"keywords": [
+		"beauty",
+		"hair",
+		"wigs",
+		"style"
+	],
+	"author": "Will Wyatt",
+	"license": "MIT",
+	"dependencies": {
+		"serve-static": "*",
+		"connect": "*"
+	}
+}
