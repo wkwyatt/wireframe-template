@@ -1,0 +1,36 @@
+#footer {
+	background: #2b2b2b;
+	padding: 50px 0;
+	text-align: center;
+	#footer-logo {
+		width: 200px;
+		margin: auto;
+		img { width: 100%; }
+	}
+	#copywrite { 
+		color: white;
+		ul {	
+			border-bottom: none;
+		}
+	}
+	ul {
+		width: 60%;
+	    margin: 0 auto 25px;
+	    padding: 25px 0;
+	    border-bottom: 1px solid white;
+	    li {
+	    	display: inline;
+		    list-style: none;
+		    padding: 0;
+		    margin: 0;
+		    a {
+		    	font-size: 16px;
+			    color: white;
+			    text-transform: lowercase;
+			    display: inline-block;
+			    padding: 0 10px;
+			    color: #fff;
+		    }
+	    }
+	}
+}

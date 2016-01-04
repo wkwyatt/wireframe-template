@@ -1,0 +1,206 @@
+#header {
+	text-align: center;
+
+	h1 {
+		font: 32px $fancyFont;
+		margin: 0;
+		// text-transform: uppercase
+	}
+	img {
+		width: 60px;
+
+	}
+}
+
+#header-wrapper {
+	position: absolute;
+	width: 100%;
+	background: url('../images/background-images/purple-granular.png') repeat;
+	transition: background 2s;
+	.container {
+		max-width: 1024px;
+		background-color:none;
+		color: white;
+		margin: 0 auto;
+		#header {
+			.navbar-default {
+				background: none;
+				border: none;
+			}
+		}
+	}
+}
+
+#header-wrapper:before {
+	width: 100%;
+	position: absolute;
+	opacity: 0;
+	content: " ";
+	background: url("assets/images/background-images/black-granular.png") repeat;
+}
+
+#header-wrapper.fix-nav {
+	position: fixed;
+	top: 0;
+	z-index: 8888;
+	:before {
+		opacity: 1;
+	}
+}
+
+.carousel {
+	margin-top: 55px;
+	.carousel-inner {
+		width: 100%;
+		.item {
+			// max-height: 450px;
+			img {
+				width: 100%;
+			}
+		}
+		.carousel-caption {
+			background-color: rgba(0,0,0, 0.7);
+			bottom: 0;
+			left:0;
+			margin: 0;
+			padding-bottom: 25px;
+			width: 100%;
+			font-weight: bold;
+			.headline-text {
+				display: inline-block;
+				margin-right: 50px;					
+				font-size: 48px;
+			}
+			.headline-button {
+				font-size: 24px;
+				display: inline-block;
+				background-color: $logoPurple;
+				border: 3px solid white;
+				border-radius: 25px 0px;
+				padding: 15px;
+			}
+		}
+	}
+}
+
+.navbar {
+	position: relative;
+	height: auto;
+	margin: auto;
+	margin-bottom: 0;
+	font-family: $digitalFont;
+	background: none;
+	border: none;
+	text-align: center;
+	#logo-image {
+		display: inline-block;
+		img {
+			width: 100px;
+		}
+	}
+	#login-header {
+		float: right;
+		padding: 15px;
+		#logout {
+			float: right;
+    		margin-left: 15px;
+    		&:hover {
+    			text-decoration: underline;
+    		}
+		}
+	}
+	ul {
+		display: inline-block;
+		list-style: none;
+		margin: 0;
+		padding: 15px;
+		li {
+			display: inline-block;
+			float: left;		
+			font-size: 18px;
+			margin-top: 10px;
+			font-weight: bold;
+			line-height: 1px;
+			a {
+				text-decoration: none;
+				padding:0 10px;
+				color: white;
+				border-left: 1px solid $logoPurple;
+			}
+		}
+		li:first-child {
+			a{
+				border:none;
+			}
+		}
+	}
+}
+.navbar-right {
+	background: none;
+	ul {
+		display: inline-block;
+		list-style: none;
+		margin: 0;
+		padding: 15px;
+		li {
+
+			a {
+				text-decoration: none;
+				font-size: 18px;
+				padding:0 10px;
+				color: white;
+				border-left: 1px solid $logoPurple;
+			}
+		}
+		li:first-child {
+			a{
+				border:none;
+			}
+		}
+	}
+}
+
+#register-box {
+	position: absolute;
+	z-index: 1;
+    right: 30px;
+    top: 15px;
+    width: 40%;
+    max-width: 300px;
+    border-radius: 5px;
+    background: #fff;
+    background: rgba(255, 255, 255, 0.8);
+    #register-header {
+    	max-width: 80%;
+	    margin: auto;
+	    color: #3a2f27;
+	    font-size: 30px;
+	    text-align: center;
+	    padding-bottom: 7px;
+	    line-height: 1em;
+	    padding-top: 10px;
+    }
+    .form-group {
+    	padding: 0 20px;
+    }
+    .register-btn-container {
+    	text-align: center;
+    	margin: 30px auto;
+    	#or-button {
+    		text-align: center;
+    		font-size: 20px;
+    	}
+    	button {
+    		width: 50%;
+		    padding: 10px;
+		    background-color: $logoPurple;
+		    border-radius: 5px;
+		    border: none;
+		    color: #fff;
+		    font-weight: bold;
+		    letter-spacing: 1px;
+		    font-size: 16px;
+		    text-align: center;
+    	}
+    }
+}

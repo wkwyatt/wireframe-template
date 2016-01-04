@@ -1,4 +1,20 @@
 var connect = require('connect');
 var serveStatic = require('serve-static');
 
-connect().use(serveStatic(__dirname)).listen(8000);
+function normalizePort(val){
+	var port = parseInt(val, 10);
+
+	if(isNaN(port)) {
+		//named pipe
+		return val;
+	}  
+
+	if(port >= 0) {
+		// port number
+		return port;
+	}
+
+	return false;
+}
+
+connect().use(serveStatic(_dirname)).listen(normalizePort(process.env.PORT||'8000'));
