@@ -17,4 +17,4 @@ function normalizePort(val){
 	return false;
 }
 
-connect().use(serveStatic(_dirname)).listen(normalizePort(process.env.PORT||'8000'));
+connect().use(serveStatic(__dirname)).listen(normalizePort(process.env.PORT||'8000'));
