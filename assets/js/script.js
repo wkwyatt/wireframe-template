@@ -104,7 +104,7 @@ wireframeApp.controller('hairStyleController',[ '$scope', '$http', '$cookies', '
   $scope.unfavImg = "assets/images/icons/empty-fav-icon.png";
   $scope.favBtn = $scope.unfavImg;
 
-  $http.get('https://callenderbeauty-api.herokuapp.com/api/hairUnits/get').then(function (result) {
+  $http.get('https://callenderbeauty-api.herokuapp.com/api/hairunits/get').then(function (result) {
     console.log(result);
     $scope.wigs = result.data;
   });
