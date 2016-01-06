@@ -7,7 +7,7 @@ var wireframeApp = angular.module('wireframeApp', ['ngCookies','ngRoute']);
   
 // }]);
 wireframeApp.run(function run($rootScope, $http) {
-    $http.get('http://localhost:4040/confirm-login')
+    $http.get('https://callenderbeauty-api.herokuapp.com/confirm-login')
         .success(function (err, user) {
             console.log("========run session======");
             console.log(user);
@@ -43,7 +43,7 @@ wireframeApp.controller('hairStyleController',[ '$scope', '$http', '$cookies', '
 
   $scope.register = function (){
     console.log("registering");
-    $http.post('http://localhost:4040/register', { username: $scope.username, password: $scope.password})
+    $http.post('https://callenderbeauty-api.herokuapp.com/register', { username: $scope.username, password: $scope.password})
     // success code
     .success(function (data, status){
       if (data.err){
@@ -59,7 +59,7 @@ wireframeApp.controller('hairStyleController',[ '$scope', '$http', '$cookies', '
 
   $scope.login = function (){
     console.log("logging in ======ang");
-    $http.post('http://localhost:4040/login', { withCredentials: true, username: $scope.username, password: $scope.password})
+    $http.post('https://callenderbeauty-api.herokuapp.com/login', { withCredentials: true, username: $scope.username, password: $scope.password})
     // success code
     .success(function (data, status){
       if (data.err){
@@ -80,7 +80,7 @@ wireframeApp.controller('hairStyleController',[ '$scope', '$http', '$cookies', '
 
   $scope.logout = function (){
     console.log("logging out");
-    $http.get('http://localhost:4040/logout').success(function (data){
+    $http.get('https://callenderbeauty-api.herokuapp.com/logout').success(function (data){
       if (data.err){
         console.log(data.err);
       } else {
@@ -104,7 +104,7 @@ wireframeApp.controller('hairStyleController',[ '$scope', '$http', '$cookies', '
   $scope.unfavImg = "assets/images/icons/empty-fav-icon.png";
   $scope.favBtn = $scope.unfavImg;
 
-  $http.get('http://localhost:4040/api/hairUnits/get').then(function (result) {
+  $http.get('https://callenderbeauty-api.herokuapp.com/api/hairUnits/get').then(function (result) {
     console.log(result);
     $scope.wigs = result.data;
   });
