@@ -240,7 +240,8 @@ if ($(this).scrollTop() > 100){
       	priceHigh: false,
      	priceLow: true,
      	category: true
-    }
+    },
+    function() { setTimeout(550);  }
   });
 
   // filter functions
